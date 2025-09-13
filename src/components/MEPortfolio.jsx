@@ -4,7 +4,7 @@ const MEPortfolio = ({ setCurrentPage }) => {
   const [activeSection, setActiveSection] = useState('projects');
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen text-gray-900" style={{background: 'transparent'}}>
       <div className="container mx-auto px-4 py-10">
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-4xl font-bold gradient-text">Mechanical Engineering Portfolio</h1>
@@ -36,17 +36,17 @@ const MEPortfolio = ({ setCurrentPage }) => {
 
         {/* Objective & Education */}
         <div className="grid md:grid-cols-2 gap-6 mb-8">
-          <div className="bg-gray-800 p-6 rounded-xl border border-gray-700">
+          <div className="bg-ghost p-6 rounded-xl border border-primary/20">
             <h2 className="text-xl font-semibold mb-2">Objective</h2>
-            <p className="text-gray-300 text-sm">
+            <p className="text-gray-700 text-sm">
               Mechanical engineering student seeking internship opportunities in robotics, design, or manufacturing
               to apply technical skills and contribute to innovative projects.
             </p>
           </div>
-          <div className="bg-gray-800 p-6 rounded-xl border border-gray-700">
+          <div className="bg-ghost p-6 rounded-xl border border-primary/20">
             <h2 className="text-xl font-semibold mb-2">Education</h2>
-            <div className="text-gray-200">Texas A&M University–Corpus Christi</div>
-            <div className="text-gray-400 text-sm mb-1">Bachelor of Science in Mechanical Engineering</div>
+            <div className="text-gray-900">Texas A&M University–Corpus Christi</div>
+            <div className="text-gray-600 text-sm mb-1">Bachelor of Science in Mechanical Engineering</div>
             <div className="text-gray-500 text-sm">Expected May 2027</div>
           </div>
         </div>
@@ -97,15 +97,15 @@ const MEPortfolio = ({ setCurrentPage }) => {
                 desc: 'Worked with a team to manufacture a torque plate and authored documentation on the full process.'
               }
             ].map((p, idx) => (
-              <div key={idx} className="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-primary transition-colors">
+              <div key={idx} className="bg-ghost p-6 rounded-xl border border-primary/20 hover:border-primary transition-colors">
                 <div className="flex items-center mb-3">
                   <div className="text-3xl mr-3">{p.icon}</div>
                   <div>
                     <h3 className="text-xl font-semibold">{p.title}</h3>
-                    <p className="text-gray-400 text-sm">{p.tech}</p>
+                    <p className="text-gray-600 text-sm">{p.tech}</p>
                   </div>
                 </div>
-                <p className="text-gray-300 text-sm mb-4">{p.desc}</p>
+                <p className="text-gray-700 text-sm mb-4">{p.desc}</p>
                 {p.title.includes('Chevelle') && (
                   <button onClick={() => setCurrentPage('proj-chevelle')} className="text-accent hover:underline text-sm">View details →</button>
                 )}
@@ -145,12 +145,12 @@ const MEPortfolio = ({ setCurrentPage }) => {
                 ]
               }
             ].map((exp, i) => (
-              <div key={i} className="bg-gray-800 p-6 rounded-xl border border-gray-700">
+              <div key={i} className="bg-ghost p-6 rounded-xl border border-primary/20">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="text-xl font-semibold">{exp.role} • {exp.org}</h3>
-                  <span className="text-gray-400 text-sm">{exp.period}</span>
+                  <span className="text-gray-600 text-sm">{exp.period}</span>
                 </div>
-                <ul className="list-disc list-inside text-gray-300 space-y-1">
+                <ul className="list-disc list-inside text-gray-700 space-y-1">
                   {exp.bullets.map((b, j) => (<li key={j}>{b}</li>))}
                 </ul>
               </div>
@@ -168,12 +168,12 @@ const MEPortfolio = ({ setCurrentPage }) => {
               { icon: '🤝', name: 'Clubs', meta: 'ASME Member, SAE Formula Team, ASME Project Group, FIRST Robotics Team 7788' },
               { icon: '💻', name: 'Software', meta: 'MATLAB, AutoCAD, Creo, Inventor, ANSYS, ADAMS, Fusion 360' },
             ].map((c, k) => (
-              <div key={k} className="bg-gray-800 p-6 rounded-xl border border-gray-700">
+              <div key={k} className="bg-ghost p-6 rounded-xl border border-primary/20">
                 <div className="flex items-center mb-2">
                   <div className="text-2xl mr-3">{c.icon}</div>
                   <div>
                     <h4 className="text-lg font-semibold">{c.name}</h4>
-                    <p className="text-gray-400 text-sm">{c.meta}</p>
+                    <p className="text-gray-600 text-sm">{c.meta}</p>
                   </div>
                 </div>
               </div>

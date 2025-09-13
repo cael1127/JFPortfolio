@@ -10,8 +10,14 @@ const ResumePage = () => {
           <a href="/Justis-Findley-Resume.pdf" target="_blank" rel="noreferrer" className="bg-primary hover:bg-secondary text-white px-4 py-2 rounded-lg transition-colors">Download PDF</a>
           <a href="https://www.linkedin.com/in/Justis-Findley" target="_blank" rel="noreferrer" className="bg-gray-800 border border-gray-700 hover:bg-gray-700 text-ghost px-4 py-2 rounded-lg transition-colors">LinkedIn</a>
         </div>
-        <div className="bg-gray-800 border border-gray-700 rounded-xl overflow-hidden">
-          <iframe title="Resume PDF" src="/Justis-Findley-Resume.pdf" className="w-full h-[80vh]" />
+        <div className="bg-gray-100 border border-gray-300 rounded-xl overflow-hidden">
+          <object data="/Justis-Findley-Resume.pdf" type="application/pdf" className="w-full h-[80vh]">
+            <embed src="/Justis-Findley-Resume.pdf" type="application/pdf" className="w-full h-[80vh]" />
+            <div className="p-6 text-gray-700">
+              <p>PDF preview isn’t available in this browser. You can download it here:</p>
+              <a href="/Justis-Findley-Resume.pdf" className="text-primary underline">Download Resume</a>
+            </div>
+          </object>
         </div>
       </div>
     </div>

@@ -16,7 +16,7 @@ import AdvancedAnalytics from './components/AdvancedAnalytics';
 import BlockchainAdvanced from './components/BlockchainAdvanced';
 import EdgeComputing from './components/EdgeComputing';
 import QuantumComputingDemo from './components/QuantumComputingDemo';
-import FloatingParticles from './components/FloatingParticles';
+import EngineeringBackground from './components/EngineeringBackground';
 import ScrollToTop from './components/ScrollToTop';
 
 // Import all demo pages
@@ -252,8 +252,8 @@ function App() {
   };
 
   return (
-    <div className="App min-h-screen bg-gray-900 relative overflow-x-hidden overscroll-behavior scroll-smooth">
-      <FloatingParticles />
+    <div className="App min-h-screen relative overflow-x-hidden overscroll-behavior scroll-smooth" style={{background: 'linear-gradient(180deg,#fbfbff,#a1f6ff)'}}>
+      <EngineeringBackground />
       <Navigation />
       <main className="relative z-10 overflow-x-hidden snap-container">
         {renderContent()}
