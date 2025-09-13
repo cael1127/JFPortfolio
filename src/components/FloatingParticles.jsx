@@ -16,12 +16,16 @@ const FloatingParticles = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Enhanced Particle class with better physics
+    // Physics + symbol rendering for engineering/math glyphs
+    const engineeringSymbols = [
+      '∑', '∫', 'π', 'θ', 'μ', 'σ', 'Δ', '≈', '→', '√', '∞', '±', '∇', 'ℏ', 'Ω', 'τ', 'λ', 'φ', 'ψ', 'dx/dt', 'F=ma'
+    ];
+
     class Particle {
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 0.5;
+        this.size = Math.random() * 1.5 + 0.8;
         this.speedX = (Math.random() - 0.5) * 0.8;
         this.speedY = (Math.random() - 0.5) * 0.8;
         this.opacity = Math.random() * 0.4 + 0.2;
@@ -29,6 +33,10 @@ const FloatingParticles = () => {
         this.pulse = Math.random() * Math.PI * 2;
         this.pulseSpeed = Math.random() * 0.02 + 0.01;
         this.originalSize = this.size;
+        this.symbol = engineeringSymbols[Math.floor(Math.random() * engineeringSymbols.length)];
+        this.fontSize = Math.floor(Math.random() * 10) + 12; // 12-22px
+        this.rotation = Math.random() * Math.PI * 2;
+        this.rotationSpeed = (Math.random() - 0.5) * 0.002;
       }
 
       update() {
@@ -45,29 +53,33 @@ const FloatingParticles = () => {
         this.pulse += this.pulseSpeed;
         this.size = this.originalSize + Math.sin(this.pulse) * 0.5;
         this.opacity = Math.max(0.15, Math.min(0.5, this.opacity + Math.sin(this.pulse * 2) * 0.01));
+        this.rotation += this.rotationSpeed;
       }
 
       draw() {
         ctx.save();
         ctx.globalAlpha = this.opacity;
-        ctx.fillStyle = `hsl(${this.hue}, 70%, 60%)`;
-        
-        // Add glow effect
-        ctx.shadowColor = `hsl(${this.hue}, 70%, 60%)`;
-        ctx.shadowBlur = 8;
-        
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-        
-        // Remove shadow for performance
+        const color = `hsl(${this.hue}, 70%, 40%)`;
+        ctx.fillStyle = color;
+        ctx.shadowColor = color;
+        ctx.shadowBlur = 6;
+
+        // Render symbol text with slight rotation
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.rotation);
+        ctx.font = `${this.fontSize}px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(this.symbol, 0, 0);
+
+        // Remove shadow
         ctx.shadowBlur = 0;
         ctx.restore();
       }
     }
 
-    // Create particles - reduced for better performance
-    const particles = Array.from({ length: 30 }, () => new Particle());
+    // Create particles - tuned count for performance
+    const particles = Array.from({ length: 28 }, () => new Particle());
 
     // Animation loop
     const animate = () => {
@@ -78,8 +90,8 @@ const FloatingParticles = () => {
         particle.draw();
       });
 
-      // Enhanced connections with gradient and performance optimization
-      const maxConnections = 3; // Limit connections per particle for performance
+      // Subtle connections with gradient and performance optimization
+      const maxConnections = 2; // Limit connections per particle for performance
       
       particles.forEach((particle, i) => {
         let connectionCount = 0;
@@ -90,7 +102,7 @@ const FloatingParticles = () => {
           const dy = particle.y - otherParticle.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           
-          if (distance < 100 && distance > 20) {
+          if (distance < 90 && distance > 25) {
             connectionCount++;
             ctx.save();
             
@@ -99,13 +111,13 @@ const FloatingParticles = () => {
               particle.x, particle.y,
               otherParticle.x, otherParticle.y
             );
-            gradient.addColorStop(0, `hsla(${particle.hue}, 70%, 60%, ${(100 - distance) / 100 * 0.25})`);
-            gradient.addColorStop(1, `hsla(${otherParticle.hue}, 70%, 60%, ${(100 - distance) / 100 * 0.25})`);
+            gradient.addColorStop(0, `hsla(${particle.hue}, 70%, 50%, ${(100 - distance) / 100 * 0.2})`);
+            gradient.addColorStop(1, `hsla(${otherParticle.hue}, 70%, 50%, ${(100 - distance) / 100 * 0.2})`);
             
             ctx.strokeStyle = gradient;
-            ctx.lineWidth = 0.4;
+            ctx.lineWidth = 0.35;
             ctx.lineCap = 'round';
-            ctx.globalAlpha = (100 - distance) / 100 * 0.3;
+            ctx.globalAlpha = (100 - distance) / 100 * 0.25;
             
             ctx.beginPath();
             ctx.moveTo(particle.x, particle.y);

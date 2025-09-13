@@ -250,7 +250,26 @@ function App() {
   return (
     <div className="App min-h-screen relative overflow-x-hidden overscroll-behavior scroll-smooth" style={{background: 'linear-gradient(180deg,#fbfbff,#a1f6ff)'}}>
       <EngineeringBackground />
-      <Navigation />
+      <nav className="bg-white/90 border-b border-gray-200 sticky top-0 z-40 backdrop-blur">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+          <button onClick={() => setCurrentPage('home')} className="flex items-center space-x-2 text-gray-900 font-semibold hover:text-teal-600 transition-colors">
+            <span className="text-2xl">JF</span>
+            <span>Justis Findley</span>
+          </button>
+          <div className="hidden md:flex items-center space-x-2">
+            {[
+              { id: 'home', label: 'Home' },
+              { id: 'portfolio', label: 'Portfolio' },
+              { id: 'models', label: '3D Models' },
+              { id: 'resume', label: 'Resume' },
+            ].map((item) => (
+              <button key={item.id} onClick={() => setCurrentPage(item.id)} className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentPage === item.id ? 'text-white bg-teal-600' : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'}`}>
+                {item.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      </nav>
       <main className="relative z-10 overflow-x-hidden snap-container">
         {renderContent()}
       </main>
