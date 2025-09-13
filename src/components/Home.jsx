@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
-import ContactModal from './ContactModal';
+import React from 'react';
 import FloatingParticles from './FloatingParticles';
 import AnimatedCard from './AnimatedCard';
 
 const Home = ({ setCurrentPage }) => {
-  const [showContactModal, setShowContactModal] = useState(false);
+  
 
   return (
     <div className="min-h-screen text-gray-900 relative overflow-x-hidden" style={{background: 'transparent'}}>
@@ -39,14 +38,7 @@ const Home = ({ setCurrentPage }) => {
               <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </button>
-            <button
-              onClick={() => setShowContactModal(true)}
-              className="bg-transparent border-2 border-primary text-accent hover:bg-primary hover:text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-secondary/30 text-lg group relative overflow-hidden"
-            >
-              <span className="relative z-10">💬 Get In Touch</span>
-              <div className="absolute inset-0 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-            </button>
+            
           </div>
         </div>
       </div>
@@ -112,22 +104,11 @@ const Home = ({ setCurrentPage }) => {
             <h3 className="font-semibold mb-2">Interactive 3D Models</h3>
             <p className="text-gray-200 text-sm">Rotate, zoom, and explore assemblies</p>
           </button>
-          <button
-            onClick={() => setShowContactModal(true)}
-            className="bg-gradient-to-br from-accent to-primary hover:from-secondary hover:to-primary p-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-accent/20 text-left"
-          >
-            <div className="text-2xl mb-3 hover:scale-110 transition-transform duration-300">📞</div>
-            <h3 className="font-semibold mb-2">Work With Me</h3>
-            <p className="text-gray-200 text-sm">Let’s build something together</p>
-          </button>
+          
         </div>
       </div>
 
-      {/* Contact Modal */}
-      <ContactModal 
-        isOpen={showContactModal} 
-        onClose={() => setShowContactModal(false)} 
-      />
+      
     </div>
   );
 };

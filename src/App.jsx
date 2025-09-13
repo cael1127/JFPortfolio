@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Home from './components/Home';
 import DemoOrganizer from './components/DemoOrganizer';
 import Freelancing from './components/Freelancing';
-import Contact from './components/Contact';
 import MEPortfolio from './components/MEPortfolio';
 import Models from './components/Models';
 import ResumePage from './components/ResumePage';
@@ -64,8 +63,6 @@ function App() {
         return <DemoOrganizer setCurrentPage={setCurrentPage} />;
       case 'freelancing':
         return <Freelancing setCurrentPage={setCurrentPage} />;
-      case 'contact':
-        return <Contact setCurrentPage={setCurrentPage} />;
       case 'resume':
         return <ResumePage />;
       case 'proj-chevelle':
@@ -168,7 +165,6 @@ function App() {
       { id: 'portfolio', label: 'Portfolio', icon: '' },
       { id: 'models', label: '3D Models', icon: '' },
       { id: 'resume', label: 'Resume', icon: '' },
-      { id: 'contact', label: 'Contact', icon: '' },
     ];
 
     return (
