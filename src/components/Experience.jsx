@@ -4,10 +4,10 @@ const Experience = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <div className="container mx-auto px-2 sm:px-4 py-6 sm:py-8">
-        <h2 className="text-4xl font-bold mb-8 text-green-400">Experience & Certifications</h2>
+        <h2 className="text-4xl font-bold mb-8 text-green-400">Experience</h2>
         
         <div className="bg-gradient-to-br from-green-900 via-teal-800 to-cyan-800 p-8 rounded-xl border border-green-800 mb-8">
-          <h3 className="text-2xl font-semibold text-white mb-4">Current Role</h3>
+          <h3 className="text-2xl font-semibold text-white mb-4">Current role</h3>
           <div className="flex items-start gap-4">
             <div className="bg-green-600 p-3 rounded-lg">
               <span className="text-2xl">💼</span>
@@ -15,10 +15,10 @@ const Experience = () => {
             <div>
               <h4 className="text-xl font-semibold text-white">Software Engineer</h4>
               <p className="text-green-400 font-medium">Three Sisters Oyster Company</p>
-              <p className="text-gray-400 text-sm">Since 2025</p>
-              <p className="text-gray-300 mt-3">
-                Developing and maintaining scalable software solutions for aquaculture data tracking, 
-                logistics management, and environmental monitoring.
+              <p className="text-gray-400 text-sm">2025 — present</p>
+              <p className="text-gray-300 mt-3 leading-relaxed">
+                Build tools for aquaculture operations: data capture, logistics, and environmental monitoring.
+                Shipped features that improved traceability and cut manual steps.
               </p>
             </div>
           </div>
@@ -32,7 +32,7 @@ const Experience = () => {
                 <span className="text-2xl">☁️</span>
                 <div>
                   <h4 className="font-semibold text-white">AWS Certified Developer</h4>
-                  <p className="text-gray-400 text-sm">2024</p>
+                  <p className="text-gray-400 text-sm">Earned 2024</p>
                 </div>
               </div>
             </div>
@@ -41,7 +41,7 @@ const Experience = () => {
                 <span className="text-2xl">📊</span>
                 <div>
                   <h4 className="font-semibold text-white">Google Cloud Professional Data Engineer</h4>
-                  <p className="text-gray-400 text-sm">2024</p>
+                  <p className="text-gray-400 text-sm">Earned 2024</p>
                 </div>
               </div>
             </div>
@@ -50,7 +50,7 @@ const Experience = () => {
                 <span className="text-2xl">🔒</span>
                 <div>
                   <h4 className="font-semibold text-white">CompTIA Security+</h4>
-                  <p className="text-gray-400 text-sm">2023</p>
+                  <p className="text-gray-400 text-sm">Earned 2023</p>
                 </div>
               </div>
             </div>

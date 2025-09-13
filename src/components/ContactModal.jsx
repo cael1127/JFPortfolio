@@ -64,7 +64,7 @@ const ContactModal = ({ isOpen, onClose }) => {
       <div className="bg-gray-900 rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-700">
-          <h2 className="text-xl font-bold text-white">Contact Justis</h2>
+          <h2 className="text-xl font-bold text-white">Get in touch</h2>
           <button
             onClick={onClose}
             className="text-gray-400 hover:text-white transition-colors"
@@ -77,7 +77,7 @@ const ContactModal = ({ isOpen, onClose }) => {
 
         {/* Quick Contact Options */}
         <div className="p-6 border-b border-gray-700">
-          <h3 className="text-lg font-semibold text-white mb-4">Quick Contact</h3>
+          <h3 className="text-lg font-semibold text-white mb-4">Quick contact</h3>
           <div className="grid grid-cols-2 gap-3">
             <button
               onClick={() => handleDirectContact('email')}
@@ -133,7 +133,7 @@ const ContactModal = ({ isOpen, onClose }) => {
 
         {/* Contact Form */}
         <div className="p-6">
-          <h3 className="text-lg font-semibold text-white mb-4">Send Message</h3>
+          <h3 className="text-lg font-semibold text-white mb-4">Send a message</h3>
           
           {submitStatus === 'success' ? (
             <div className="bg-green-600 text-white p-4 rounded-lg mb-4">
@@ -190,7 +190,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                   onChange={handleInputChange}
                   required
                   className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-                  placeholder="Project inquiry, collaboration, etc."
+                  placeholder="Project scope, role, or collaboration"
                 />
               </div>
 
@@ -206,7 +206,7 @@ const ContactModal = ({ isOpen, onClose }) => {
                   required
                   rows={4}
                   className="w-full px-3 py-2 bg-gray-800 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent resize-none"
-                  placeholder="Tell me about your project or how I can help..."
+                  placeholder="Context, constraints, timelines; links to specs are useful."
                 />
               </div>
 
@@ -221,14 +221,14 @@ const ContactModal = ({ isOpen, onClose }) => {
                       <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                       <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                     </svg>
-                    <span>Sending...</span>
+                    <span>Sending…</span>
                   </>
                 ) : (
                   <>
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
                     </svg>
-                    <span>Send Message</span>
+                    <span>Send message</span>
                   </>
                 )}
               </button>
@@ -238,7 +238,7 @@ const ContactModal = ({ isOpen, onClose }) => {
 
         {/* Contact Info */}
         <div className="p-6 bg-gray-800 rounded-b-lg">
-          <h3 className="text-lg font-semibold text-white mb-3">Contact Information</h3>
+          <h3 className="text-lg font-semibold text-white mb-3">Contact information</h3>
           <div className="space-y-2 text-gray-300">
             <div className="flex items-center space-x-2">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

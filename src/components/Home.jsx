@@ -1,13 +1,13 @@
 import React from 'react';
-import FloatingParticles from './FloatingParticles';
 import AnimatedCard from './AnimatedCard';
+import StatStrip from './StatStrip';
+import Timeline from './Timeline';
 
 const Home = ({ setCurrentPage }) => {
   
 
   return (
     <div className="min-h-screen text-gray-900 relative overflow-x-hidden" style={{background: 'transparent'}}>
-      <FloatingParticles />
       {/* Hero Section */}
       <div className="container mx-auto px-4 py-16 relative z-10 snap-section">
         <div className="text-center max-w-4xl mx-auto">
@@ -16,18 +16,22 @@ const Home = ({ setCurrentPage }) => {
               Justis Findley
             </h1>
           </AnimatedCard>
-          <AnimatedCard delay={150} direction="down" className="mb-8">
-            <p className="text-2xl md:text-3xl text-gray-300">
-              Mechanical Engineer • CAD • FEA • Manufacturing
+          <AnimatedCard delay={150} direction="down" className="mb-4">
+            <p className="text-xl md:text-2xl text-gray-700">
+              Mechanical engineer — CAD (SolidWorks/Fusion), FEA, DFM/DFA
             </p>
           </AnimatedCard>
-          <AnimatedCard delay={300} direction="down" className="mb-12">
-            <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-              I design, analyze, and build physical products. From concept sketches to
-              production-ready drawings and prototypes, I combine CAD, simulation, and
-              hands-on iteration to deliver robust, manufacturable designs.
+          <AnimatedCard delay={250} direction="down" className="mb-8">
+            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              I deliver manufacturable designs with GD&T, tolerance analysis, and FEA‑backed validation. 
+              Explore capabilities, projects, and a concise career timeline.
             </p>
           </AnimatedCard>
+
+          {/* Stat Strip */}
+          <div className="mb-12">
+            <StatStrip />
+          </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button
@@ -47,7 +51,7 @@ const Home = ({ setCurrentPage }) => {
       <div className="py-16 relative z-10 snap-section">
         <div className="container mx-auto px-4">
           <AnimatedCard delay={0} direction="down" className="mb-12">
-            <h2 className="text-3xl font-bold text-center">Mechanical Expertise</h2>
+            <h2 className="text-3xl font-bold text-center">Core skills</h2>
           </AnimatedCard>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <AnimatedCard delay={200} direction="left" className="text-center hover:scale-105 transition-all duration-300 group cursor-pointer">
@@ -86,25 +90,33 @@ const Home = ({ setCurrentPage }) => {
 
       {/* Highlighted Sections */}
       <div className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-center mb-12">Highlighted Work</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">Featured work</h2>
         <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           <button
             onClick={() => setCurrentPage('portfolio')}
             className="bg-gradient-to-br from-primary to-accent hover:from-secondary hover:to-accent p-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-secondary/20 text-left"
           >
             <div className="text-2xl mb-3 hover:scale-110 transition-transform duration-300">🛠️</div>
-            <h3 className="font-semibold mb-2">Design Projects</h3>
-            <p className="text-gray-200 text-sm">Fixtures, enclosures, frames, and more</p>
+            <h3 className="font-semibold mb-2">Design projects</h3>
+            <p className="text-gray-200 text-sm leading-relaxed">Fixtures, enclosures, frames, and more</p>
           </button>
           <button
             onClick={() => setCurrentPage('models')}
             className="bg-gradient-to-br from-secondary to-primary hover:from-accent hover:to-secondary p-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 text-left"
           >
             <div className="text-2xl mb-3 hover:scale-110 transition-transform duration-300">🧩</div>
-            <h3 className="font-semibold mb-2">Interactive 3D Models</h3>
-            <p className="text-gray-200 text-sm">Rotate, zoom, and explore assemblies</p>
+            <h3 className="font-semibold mb-2">Interactive 3D models</h3>
+            <p className="text-gray-200 text-sm leading-relaxed">Rotate, zoom, and explore assemblies</p>
           </button>
           
+        </div>
+      </div>
+
+      {/* Timeline */}
+      <div className="container mx-auto px-4 pb-20">
+        <h2 className="text-3xl font-bold text-center mb-6">Career timeline</h2>
+        <div className="max-w-3xl mx-auto">
+          <Timeline />
         </div>
       </div>
 

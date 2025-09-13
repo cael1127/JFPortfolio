@@ -46,9 +46,9 @@ const Projects = ({ setCurrentPage }) => {
         {activeTab === 'portfolio' && (
           <div className="space-y-8">
             <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-xl border border-gray-600">
-              <h3 className="text-2xl font-bold text-white mb-4">Portfolio Projects</h3>
-              <p className="text-gray-300 mb-6">
-                A collection of my personal and professional projects showcasing various technologies and skills.
+              <h3 className="text-2xl font-bold text-white mb-4">Portfolio projects</h3>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Selected work across software systems, data pipelines, and applied ML.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -61,8 +61,8 @@ const Projects = ({ setCurrentPage }) => {
                       <p className="text-gray-400 text-sm">React, Tailwind CSS</p>
                     </div>
                   </div>
-                  <p className="text-gray-300 text-sm mb-4">
-                    A modern, responsive portfolio website showcasing my skills and projects with interactive demos.
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                    SPA built with React and Tailwind; interactive demo launcher.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="bg-gray-600 text-white px-2 py-1 rounded text-xs">React</span>
@@ -79,8 +79,8 @@ const Projects = ({ setCurrentPage }) => {
                       <p className="text-gray-400 text-sm">Solidity, Web3.js, React</p>
                     </div>
                   </div>
-                  <p className="text-gray-300 text-sm mb-4">
-                    A complete blockchain implementation for supply chain transparency with smart contracts.
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                    On-chain traceability via Solidity contracts and Web3 integration.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="bg-gray-600 text-white px-2 py-1 rounded text-xs">Solidity</span>
@@ -97,8 +97,8 @@ const Projects = ({ setCurrentPage }) => {
                       <p className="text-gray-400 text-sm">IoT, React, Machine Learning</p>
                     </div>
                   </div>
-                  <p className="text-gray-300 text-sm mb-4">
-                    AI-powered aquaculture monitoring system with real-time sensor data and predictive analytics.
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                    IoT telemetry ingest + predictive models for husbandry alerts.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="bg-gray-600 text-white px-2 py-1 rounded text-xs">IoT</span>
@@ -115,8 +115,8 @@ const Projects = ({ setCurrentPage }) => {
                       <p className="text-gray-400 text-sm">React, AI/ML, GPS Integration</p>
                     </div>
                   </div>
-                  <p className="text-gray-300 text-sm mb-4">
-                    AI-powered fleet management and route optimization platform with real-time tracking.
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                    Fleet tracking + route optimization using geofencing and ETA models.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="bg-gray-600 text-white px-2 py-1 rounded text-xs">React</span>
@@ -133,8 +133,8 @@ const Projects = ({ setCurrentPage }) => {
                       <p className="text-gray-400 text-sm">React, AI/ML, HIPAA Compliance</p>
                     </div>
                   </div>
-                  <p className="text-gray-300 text-sm mb-4">
-                    AI-powered patient monitoring and medical analytics platform with predictive diagnostics.
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                    Patient telemetry analytics with risk scoring (PHI‑safe workflows).
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="bg-gray-600 text-white px-2 py-1 rounded text-xs">React</span>
@@ -151,8 +151,8 @@ const Projects = ({ setCurrentPage }) => {
                       <p className="text-gray-400 text-sm">React, Financial APIs, Data Viz</p>
                     </div>
                   </div>
-                  <p className="text-gray-300 text-sm mb-4">
-                    Advanced financial analysis and portfolio management platform with real-time market data.
+                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                    Real‑time market ingest + portfolio analytics and alerting.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="bg-gray-600 text-white px-2 py-1 rounded text-xs">React</span>
