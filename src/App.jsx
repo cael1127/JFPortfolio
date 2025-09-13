@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Home from './components/Home';
 import DemoOrganizer from './components/DemoOrganizer';
 import Freelancing from './components/Freelancing';
@@ -51,18 +51,45 @@ function App() {
     window.scrollTo(0, 0);
   }, [currentPage]);
 
+  // Hash-based routing: sync URL -> state and state -> URL
+  useEffect(() => {
+    const parseHash = () => {
+      const hash = window.location.hash.replace(/^#\/?/, '');
+      return hash || 'home';
+    };
+
+    // Set initial page from hash
+    setCurrentPage(parseHash());
+
+    const onHashChange = () => {
+      setCurrentPage(parseHash());
+    };
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
+  const navigateTo = useCallback((pageId) => {
+    if (!pageId) return;
+    if (window.location.hash !== `#/${pageId}`) {
+      window.location.hash = `#/${pageId}`;
+    } else {
+      // Force state update if same hash clicked again
+      setCurrentPage(pageId);
+    }
+  }, []);
+
   const renderContent = () => {
     switch (currentPage) {
       case 'home':
-        return <Home setCurrentPage={setCurrentPage} />;
+        return <Home setCurrentPage={navigateTo} />;
       case 'portfolio':
-        return <MEPortfolio setCurrentPage={setCurrentPage} />;
+        return <MEPortfolio setCurrentPage={navigateTo} />;
       case 'models':
-        return <Models setCurrentPage={setCurrentPage} />;
+        return <Models setCurrentPage={navigateTo} />;
       case 'demo-organizer':
-        return <DemoOrganizer setCurrentPage={setCurrentPage} />;
+        return <DemoOrganizer setCurrentPage={navigateTo} />;
       case 'freelancing':
-        return <Freelancing setCurrentPage={setCurrentPage} />;
+        return <Freelancing setCurrentPage={navigateTo} />;
       case 'resume':
         return <ResumePage />;
       case 'proj-chevelle':
@@ -74,64 +101,64 @@ function App() {
       case 'proj-torque':
         return <TorquePlateProject />;
       case 'ai-interview-simulator':
-        return <AIInterviewSimulator setCurrentPage={setCurrentPage} />;
+        return <AIInterviewSimulator setCurrentPage={navigateTo} />;
       case 'real-time-collaboration':
-        return <RealTimeCollaboration setCurrentPage={setCurrentPage} />;
+        return <RealTimeCollaboration setCurrentPage={navigateTo} />;
       case 'advanced-analytics':
-        return <AdvancedAnalytics setCurrentPage={setCurrentPage} />;
+        return <AdvancedAnalytics setCurrentPage={navigateTo} />;
       case 'blockchain-advanced':
-        return <BlockchainAdvanced setCurrentPage={setCurrentPage} />;
+        return <BlockchainAdvanced setCurrentPage={navigateTo} />;
       case 'edge-computing':
-        return <EdgeComputing setCurrentPage={setCurrentPage} />;
+        return <EdgeComputing setCurrentPage={navigateTo} />;
       case 'quantum-computing':
-        return <QuantumComputingDemo setCurrentPage={setCurrentPage} />;
+        return <QuantumComputingDemo setCurrentPage={navigateTo} />;
       
       // Demo pages
       case 'blockchain-demo':
-        return <BlockchainDemoPage setCurrentPage={setCurrentPage} />;
+        return <BlockchainDemoPage setCurrentPage={navigateTo} />;
       case 'aquaculture-demo':
-        return <AquacultureDemoPage setCurrentPage={setCurrentPage} />;
+        return <AquacultureDemoPage setCurrentPage={navigateTo} />;
       case 'financial-demo':
-        return <FinancialDemoPage setCurrentPage={setCurrentPage} />;
+        return <FinancialDemoPage setCurrentPage={navigateTo} />;
       case 'healthcare-demo':
-        return <HealthcareDemoPage setCurrentPage={setCurrentPage} />;
+        return <HealthcareDemoPage setCurrentPage={navigateTo} />;
       case 'logistics-demo':
-        return <LogisticsDemoPage setCurrentPage={setCurrentPage} />;
+        return <LogisticsDemoPage setCurrentPage={navigateTo} />;
       case 'portfolio-builder-demo':
-        return <PortfolioBuilderDemoPage setCurrentPage={setCurrentPage} />;
+        return <PortfolioBuilderDemoPage setCurrentPage={navigateTo} />;
       case 'restaurant-app-demo':
-        return <RestaurantAppDemoPage setCurrentPage={setCurrentPage} />;
+        return <RestaurantAppDemoPage setCurrentPage={navigateTo} />;
       case 'resume-analyzer-demo':
-        return <ResumeAnalyzerDemoPage setCurrentPage={setCurrentPage} />;
+        return <ResumeAnalyzerDemoPage setCurrentPage={navigateTo} />;
       case 'smart-city-demo':
-        return <SmartCityDemoPage setCurrentPage={setCurrentPage} />;
+        return <SmartCityDemoPage setCurrentPage={navigateTo} />;
       case 'whiteboard-demo':
-        return <WhiteboardDemoPage setCurrentPage={setCurrentPage} />;
+        return <WhiteboardDemoPage setCurrentPage={navigateTo} />;
       case 'game-platform-demo':
-        return <GamePlatformDemoPage setCurrentPage={setCurrentPage} />;
+        return <GamePlatformDemoPage setCurrentPage={navigateTo} />;
       case 'ai-assistant-demo':
-        return <AIAssistantDemoPage setCurrentPage={setCurrentPage} />;
+        return <AIAssistantDemoPage setCurrentPage={navigateTo} />;
       case 'snake-ai-demo':
-        return <SnakeAIDemoPage setCurrentPage={setCurrentPage} />;
+        return <SnakeAIDemoPage setCurrentPage={navigateTo} />;
       case 'ai-agents-demo':
-        return <AIAgentsDemoPage setCurrentPage={setCurrentPage} />;
+        return <AIAgentsDemoPage setCurrentPage={navigateTo} />;
       case 'sentiment-analysis-demo':
-        return <SentimentAnalysisDemoPage setCurrentPage={setCurrentPage} />;
+        return <SentimentAnalysisDemoPage setCurrentPage={navigateTo} />;
 
       case 'rag-chatbot-demo':
-        return <RAGChatbotDemoPage setCurrentPage={setCurrentPage} />;
+        return <RAGChatbotDemoPage setCurrentPage={navigateTo} />;
       case 'bookstore-api-demo':
-        return <BookstoreAPIDemoPage setCurrentPage={setCurrentPage} />;
+        return <BookstoreAPIDemoPage setCurrentPage={navigateTo} />;
       case 'mern-expense-tracker-demo':
-        return <MERNExpenseTrackerDemoPage setCurrentPage={setCurrentPage} />;
+        return <MERNExpenseTrackerDemoPage setCurrentPage={navigateTo} />;
       case 'social-network-demo':
-        return <SocialNetworkDemoPage setCurrentPage={setCurrentPage} />;
+        return <SocialNetworkDemoPage setCurrentPage={navigateTo} />;
       case 'interactive-resume-demo':
-        return <InteractiveResumeDemoPage setCurrentPage={setCurrentPage} />;
+        return <InteractiveResumeDemoPage setCurrentPage={navigateTo} />;
       case 'fraud-detection-demo':
-        return <FraudDetectionDemoPage setCurrentPage={setCurrentPage} />;
+        return <FraudDetectionDemoPage setCurrentPage={navigateTo} />;
       case 'deepfake-detection-demo':
-        return <DeepfakeDetectionDemoPage setCurrentPage={setCurrentPage} />;
+        return <DeepfakeDetectionDemoPage setCurrentPage={navigateTo} />;
       case 'resumeanalyzer-demo':
         return <ResumeAnalyzerDemoPage setCurrentPage={setCurrentPage} />;
       case 'aiassistant-demo':
@@ -154,7 +181,7 @@ function App() {
         return <GamePlatformDemoPage setCurrentPage={setCurrentPage} />;
       
       default:
-        return <Home setCurrentPage={setCurrentPage} />;
+        return <Home setCurrentPage={navigateTo} />;
     }
   };
 
@@ -252,7 +279,7 @@ function App() {
       <EngineeringBackground />
       <nav className="bg-white/90 border-b border-gray-200 sticky top-0 z-40 backdrop-blur">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <button onClick={() => setCurrentPage('home')} className="flex items-center space-x-2 text-gray-900 font-semibold hover:text-teal-600 transition-colors">
+          <button onClick={() => navigateTo('home')} className="flex items-center space-x-2 text-gray-900 font-semibold hover:text-teal-600 transition-colors">
             <span className="text-2xl">JF</span>
             <span>Justis Findley</span>
           </button>
@@ -263,7 +290,7 @@ function App() {
               { id: 'models', label: '3D Models' },
               { id: 'resume', label: 'Resume' },
             ].map((item) => (
-              <button key={item.id} onClick={() => setCurrentPage(item.id)} className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentPage === item.id ? 'text-white bg-teal-600' : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'}`}>
+              <button key={item.id} onClick={() => navigateTo(item.id)} className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentPage === item.id ? 'text-white bg-teal-600' : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'}`}>
                 {item.label}
               </button>
             ))}
