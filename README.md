@@ -1,131 +1,126 @@
-# Cael Findley - Portfolio
+# Justis Findley – Mechanical Engineering Portfolio
 
-A modern, responsive portfolio website showcasing full-stack development projects, live demos, and professional services.
+A modern, responsive portfolio for showcasing mechanical engineering projects, CAD/FEA skills, certifications, and interactive 3D models.
 
 ## Features
 
-- **Dark Mode Design** - Modern dark theme with green and teal accents
-- **Interactive Live Demos** - Real-time data visualization and project demonstrations
-- **Comprehensive Project Showcase** - Detailed project descriptions with technical specifications
-- **Freelancing Services** - Professional service offerings with pricing
+- **Modern Design** - Clean dark theme with Justis’ blue/aqua brand palette
+- **Portfolio & Detail Pages** - Chevelle, Boat Restoration, Slot Machine, Torque Plate
+- **Interactive 3D Models** - Sketchfab embeds and local WebGL viewer (Three.js)
+- **Resume Page** - Embedded PDF viewer and quick download
 - **Responsive Design** - Optimized for all devices and screen sizes
-- **Search & Filter** - Easy navigation through projects and categories
 
 ## Technologies Used
 
 ### Frontend
-- **React** - Modern UI framework
-- **Tailwind CSS** - Utility-first CSS framework
-- **JavaScript ES6+** - Modern JavaScript features
-- **Socket.io Client** - Real-time data communication
+- **React (CRA)**
+- **Tailwind CSS**
+- **JavaScript ES6+**
+- **Three.js** via **@react-three/fiber** and **@react-three/drei** (local viewer)
 
-### Backend
-- **Node.js** - Server-side JavaScript runtime
-- **Express.js** - Web application framework
-- **Socket.io** - Real-time bidirectional communication
-- **CORS** - Cross-origin resource sharing
+### Backend (optional folder)
+- Simple Node utilities for demos; not required for portfolio deployment
 
 ## 📁 Project Structure
 
 ```
 Portfolio/
-├── App.jsx                 # Main React application
-├── index.html             # HTML entry point
-├── backend/               # Node.js backend server
-│   ├── server.js         # Express server setup
-│   ├── package.json      # Backend dependencies
-│   └── ...
-├── README.md             # Project documentation
-└── .gitignore           # Git ignore rules
+├── src/
+│  ├── App.jsx
+│  ├── components/
+│  │  ├── Home.jsx
+│  │  ├── MEPortfolio.jsx           # Projects, Experience, Certifications
+│  │  ├── Models.jsx                # 3D embeds + local viewer
+│  │  ├── ThreeViewer.jsx           # @react-three/fiber placeholder viewer
+│  │  └── projects/
+│  │     ├── ChevelleProject.jsx
+│  │     ├── BoatProject.jsx
+│  │     ├── SlotMachineProject.jsx
+│  │     └── TorquePlateProject.jsx
+│  └── index.js
+├── public/
+│  ├── index.html
+│  └── Justis-Findley-Resume.pdf    # Place your resume here for Resume page
+├── tailwind.config.js
+├── netlify.toml                     # Netlify build + SPA redirects
+└── README.md
 ```
 
 ## Getting Started
 
 ### Prerequisites
-- Node.js (v14 or higher)
-- npm or yarn
+- Node.js 18+
+- npm
 
 ### Installation
 
-1. **Clone the repository**
+1. Clone
    ```bash
-   git clone <your-repo-url>
-   cd Portfolio
+   git clone https://github.com/cael1127/JFPortfolio.git
+   cd JFPortfolio
    ```
 
-2. **Install backend dependencies**
+2. Install dependencies
    ```bash
-   cd backend
    npm install
    ```
 
-3. **Start the backend server**
+3. Start dev server
    ```bash
    npm start
    ```
-   The backend will run on `http://localhost:4000`
 
-4. **Open the frontend**
-   - Open `index.html` in your browser, or
-   - Serve it with a local server:
-     ```bash
-     # Using Python
-     python -m http.server 8000
-     
-     # Using Node.js
-     npx serve .
-     ```
+4. Build
+   ```bash
+   npm run build
+   ```
 
-## Live Demos
+## Portfolio Sections
 
-The portfolio includes several interactive live demos:
+- Projects: Chevelle Restoration, 30 ft Boat Restoration, Slot Machine Restoration, Torque Plate
+- Experience: Port Lavaca Auto Group (Head Porter), Domino’s (Delivery Driver)
+- Certifications: Apprenticeship Electrician (exp 05/10/26), NCCER Electrical 1 & 2, ServSafe
+- Education: Texas A&M University–Corpus Christi — B.S. Mechanical Engineering (Expected May 2027)
 
-- **Aquaculture Tracking System** - Real-time sensor data visualization
-- **Cloud Migration Toolset** - Migration simulation and planning
-- **IT Helpdesk Portal** - Ticket management system
-- **Network Vulnerability Scanner** - Security scanning interface
-- **Zero Trust Authentication** - Multi-factor authentication demo
-- **Customer Chatbot** - AI-powered customer service
-- **Predictive Maintenance AI** - Equipment monitoring dashboard
-- **Sales Forecasting Model** - Data analysis and predictions
-- **Environmental Impact Dashboard** - Sustainability metrics
+## Brand Color Palette
 
-## Project Categories
+CSS HEX
+```
+--bice-blue: #006f9f;
+--moonstone: #2ca8bb;
+--vivid-sky-blue: #00d0ff;
+--celeste: #a1f6ff;
+--ghost-white: #fbfbff;
+```
+Configured in `tailwind.config.js` as `primary`, `secondary`, `accent`, `celeste`, `ghost`.
 
-- **Software Development** - Full-stack applications and systems
-- **IT & Infrastructure** - DevOps and infrastructure projects
-- **Cybersecurity** - Security tools and implementations
-- **AI & Machine Learning** - Intelligent systems and automation
-- **Data Analytics** - Business intelligence and reporting
-- **DevOps & Infrastructure** - Cloud and deployment solutions
-- **Blockchain & Emerging Tech** - Next-generation technologies
+## 3D Models
 
-## Freelancing Services
+- Local Viewer: `src/components/ThreeViewer.jsx` (React Three Fiber)
+- Embeds: `src/components/Models.jsx` (replace Sketchfab URLs with your own)
 
-Professional services offered:
+## Netlify Deployment
 
-- **Full-Stack Development** - Complete web applications
-- **Security Consulting** - Cybersecurity assessments and implementations
-- **Data Analytics** - Business intelligence and reporting solutions
+- Uses `netlify.toml` with SPA redirect and Node 18
+- Build command: `npm run build`
+- Publish directory: `build`
 
-## Design Features
-
-- **Dark Mode** - Easy on the eyes with green and teal accents
-- **Responsive Layout** - Works perfectly on desktop, tablet, and mobile
-- **Smooth Animations** - CSS transitions and micro-interactions
-- **Modern UI/UX** - Clean, professional design with excellent usability
+CLI (after `npm i -g netlify-cli`):
+```bash
+netlify login
+netlify init    # link to site
+netlify deploy --build --prod
+```
 
 ## 🔧 Development
 
 ### Adding New Projects
-1. Add project data to the `projects` object in `App.jsx`
-2. Include project details, technologies, and demo links
-3. Update navigation categories if needed
+1. Create a new component in `src/components/projects/YourProject.jsx`
+2. Link from `MEPortfolio.jsx` with a `setCurrentPage('proj-your')` entry
 
 ### Customizing Styles
-- Modify Tailwind classes in `App.jsx`
-- Update color scheme in the CSS variables
-- Customize animations and transitions
+- Tailwind tokens in `tailwind.config.js`
+- Component styles via Tailwind classes
 
 ## 📱 Browser Support
 
@@ -148,8 +143,9 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Contact
 
-- **Email**: findleytechs@gmail.com
+- **Email**: JustisFindley@gmail.com
+- **LinkedIn**: https://www.linkedin.com/in/Justis-Findley
 
 ---
 
-Built with passion by Cael Findley 
+Built for Justis Findley 
