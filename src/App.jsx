@@ -17,6 +17,8 @@ import EdgeComputing from './components/EdgeComputing';
 import QuantumComputingDemo from './components/QuantumComputingDemo';
 import EngineeringBackground from './components/EngineeringBackground';
 import ScrollToTop from './components/ScrollToTop';
+import ScrollProgress from './components/ScrollProgress';
+import PerformanceMonitor from './components/PerformanceMonitor';
 
 // Import all demo pages
 import BlockchainDemoPage from './pages/BlockchainDemoPage';
@@ -276,6 +278,8 @@ function App() {
 
   return (
     <div className="App min-h-screen relative overflow-x-hidden overscroll-behavior scroll-smooth" style={{background: 'linear-gradient(180deg,#fbfbff,#a1f6ff)'}}>
+      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 bg-white text-gray-900 px-3 py-2 rounded shadow">Skip to content</a>
+      <ScrollProgress />
       <EngineeringBackground />
       <nav className="bg-white/90 border-b border-gray-200 sticky top-0 z-40 backdrop-blur">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -297,10 +301,13 @@ function App() {
           </div>
         </div>
       </nav>
-      <main className="relative z-10 overflow-x-hidden snap-container">
-        {renderContent()}
+      <main id="main" className="relative z-10 overflow-x-hidden snap-container">
+        <div key={currentPage} className="page-enter page-enter-active">
+          {renderContent()}
+        </div>
       </main>
       <ScrollToTop />
+      <PerformanceMonitor />
     </div>
   );
 }
