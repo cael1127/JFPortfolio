@@ -5,9 +5,9 @@ const ResumePage = () => {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-10">
-        <h1 className="text-3xl font-bold mb-4">Resume</h1>
-        <p className="text-gray-600 mb-4">Download a copy or view inline below.</p>
-        <div className="flex gap-2 sm:gap-3 mb-6 flex-wrap">
+        <h1 className="text-3xl font-bold mb-2 text-center md:text-left">Resume</h1>
+        <p className="text-gray-600 mb-4 text-center md:text-left">Download a copy or view inline below.</p>
+        <div className="flex gap-2 sm:gap-3 mb-6 flex-wrap justify-center md:justify-start">
           <a href={resumeUrl} target="_blank" rel="noreferrer" className="bg-teal-600 hover:bg-teal-700 text-white px-4 py-2 rounded-lg transition-colors" download>
             Download image
           </a>

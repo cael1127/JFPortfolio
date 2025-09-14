@@ -53,7 +53,7 @@ const Freelancing = () => {
                 </li>
                 <li className="flex items-center group-hover:text-gray-200 transition-colors">
                   <span className="text-teal-400 mr-2 group-hover:scale-110 transition-transform duration-300">•</span>
-                  RESTful APIs & GraphQL
+                  Web services and data APIs (including GraphQL)
                 </li>
                 <li className="flex items-center group-hover:text-gray-200 transition-colors">
                   <span className="text-teal-400 mr-2 group-hover:scale-110 transition-transform duration-300">•</span>
@@ -82,15 +82,15 @@ const Freelancing = () => {
 
             <div className="bg-gray-800 p-6 rounded-lg hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/20 transition-all">
               <div className="text-3xl mb-4">🤖</div>
-              <h3 className="text-xl font-semibold mb-3">AI/ML Integration</h3>
+              <h3 className="text-xl font-semibold mb-3">Artificial Intelligence and Machine Learning</h3>
               <p className="text-gray-400 mb-4">
                 Machine learning solutions and AI-powered applications
               </p>
               <ul className="text-sm text-gray-300 space-y-1">
-                <li>• Custom ML Models</li>
-                <li>• OpenAI API Integration</li>
-                <li>• Data Analysis & Visualization</li>
-                <li>• NLP & Chatbot Development</li>
+                <li>• Custom machine learning models</li>
+                <li>• OpenAI integrations</li>
+                <li>• Data analysis and visual dashboards</li>
+                <li>• Natural‑language chatbots</li>
               </ul>
             </div>
 

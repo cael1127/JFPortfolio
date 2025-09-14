@@ -23,18 +23,18 @@ const Timeline = () => {
     <div className="space-y-4">
       <Entry
         title="Texas A&M University–Corpus Christi"
-        meta="B.S. Mechanical Engineering"
+        meta="Bachelor of Science in Mechanical Engineering"
         period="Expected May 2027"
       />
       <Entry
         title="Port Lavaca Auto Group — Head Porter"
-        period="May 2024 — Aug 2024"
-        bullets={["Managed personnel and stock to improve workflow and quality.", "Delivered vehicles; maintained organization across departments."]}
+        period="May 2024 — August 2024"
+        bullets={["Coordinated team members and inventory to improve workflow and product quality.", "Delivered vehicles and kept multiple departments organized."]}
       />
       <Entry
         title="Domino’s — Delivery Driver"
         period="June 2025 — Present"
-        bullets={["On-time, accurate deliveries with excellent customer service.", "Handled high-volume orders under pressure."]}
+        bullets={["Delivered orders on time with friendly, professional service.", "Managed busy periods with strong time management and attention to detail."]}
       />
     </div>
   );

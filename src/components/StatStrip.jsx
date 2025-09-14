@@ -10,10 +10,10 @@ const Stat = ({ label, value }) => (
 const StatStrip = () => {
   return (
     <div className="w-full bg-ghost/80 border border-primary/20 rounded-xl px-3 sm:px-4 py-3 flex flex-wrap gap-3 items-center justify-between">
-      <Stat label="CAD" value="SolidWorks, Fusion 360, Onshape" />
-      <Stat label="Analysis" value="FEA, CFD, GD&T" />
-      <Stat label="Manufacturing" value="CNC, sheet metal" />
-      <Stat label="Certifications" value="NCCER, ServSafe" />
+      <Stat label="3D Design" value="SolidWorks, Fusion 360, Onshape" />
+      <Stat label="Engineering Analysis" value="Strength and fluid simulations; clear dimensions and tolerances" />
+      <Stat label="Manufacturing" value="Machining and sheet‑metal work" />
+      <Stat label="Certifications" value="Construction training, ServSafe" />
     </div>
   );
 };

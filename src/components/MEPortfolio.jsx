@@ -7,8 +7,8 @@ const MEPortfolio = ({ setCurrentPage }) => {
     <div className="min-h-screen text-gray-900" style={{background: 'transparent'}}>
       <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-10">
         <div className="flex items-center justify-between mb-6">
-          <h1 className="text-4xl font-bold gradient-text">Mechanical Engineering Portfolio</h1>
-          <div className="flex gap-2 flex-wrap">
+          <h1 className="text-4xl font-bold gradient-text text-center md:text-left w-full md:w-auto">Mechanical Engineering Portfolio</h1>
+          <div className="flex gap-2 flex-wrap justify-center md:justify-end w-full md:w-auto mt-3 md:mt-0">
             <a
               href="/Justis-Findley-Resume.pdf"
               target="_blank"
@@ -39,8 +39,8 @@ const MEPortfolio = ({ setCurrentPage }) => {
           <div className="bg-ghost p-6 rounded-xl border border-primary/20">
             <h2 className="text-xl font-semibold mb-2">Objective</h2>
             <p className="text-gray-700 text-sm">
-              Mechanical engineering student seeking internship opportunities in robotics, design, or manufacturing
-              to apply technical skills and contribute to innovative projects.
+              Mechanical engineering student looking for an internship in robotics, product design, or manufacturing.
+              I want to learn from a hands-on team and help build useful, reliable products.
             </p>
           </div>
           <div className="bg-ghost p-6 rounded-xl border border-primary/20">
@@ -55,7 +55,7 @@ const MEPortfolio = ({ setCurrentPage }) => {
           {[
             { id: 'projects', label: 'Projects' },
             { id: 'experience', label: 'Experience' },
-            { id: 'certs', label: 'Licenses & Certifications' },
+            { id: 'certs', label: 'Licenses and Certifications' },
           ].map((tab) => (
             <button
               key={tab.id}
@@ -131,8 +131,8 @@ const MEPortfolio = ({ setCurrentPage }) => {
                 org: 'Port Lavaca Auto Group',
                 period: 'May 2024 — August 2024',
                 bullets: [
-                  'Managed personnel and stock to improve workflow and product quality.',
-                  'Delivered vehicles and maintained organization across multiple departments.'
+                  'Coordinated team members and inventory to improve workflow and quality.',
+                  'Delivered vehicles and kept multiple departments organized.'
                 ]
               },
               {
@@ -140,8 +140,8 @@ const MEPortfolio = ({ setCurrentPage }) => {
                 org: 'Domino’s',
                 period: 'June 2025 — Present',
                 bullets: [
-                  'Ensured on-time, accurate deliveries while providing excellent customer service.',
-                  'Handled high-volume orders with strong time management under pressure.'
+                  'Delivered orders on time with friendly, professional service.',
+                  'Managed busy periods with strong time management and attention to detail.'
                 ]
               }
             ].map((exp, i) => (
@@ -161,12 +161,12 @@ const MEPortfolio = ({ setCurrentPage }) => {
         {activeSection === 'certs' && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: '🧰', name: 'Apprenticeship Electrician License', meta: 'Expires 05/10/26' },
-              { icon: '🏗️', name: 'NCCER Electrical 1 & 2', meta: 'NCCER Construction' },
+              { icon: '🧰', name: 'Apprentice Electrician License', meta: 'Expires May 10, 2026' },
+              { icon: '🏗️', name: 'National Center for Construction Education and Research — Electrical Levels 1 and 2', meta: 'Construction training program' },
               { icon: '🍽️', name: 'ServSafe', meta: 'Food Protection Manager Certification' },
-              { icon: '📘', name: 'Relevant Courses', meta: 'Engineering Graphics, Circuit Analysis, Fluid Mechanics, Manufacturing Processes, Programming' },
-              { icon: '🤝', name: 'Clubs', meta: 'ASME Member, SAE Formula Team, ASME Project Group, FIRST Robotics Team 7788' },
-              { icon: '💻', name: 'Software', meta: 'MATLAB, AutoCAD, Creo, Inventor, ANSYS, ADAMS, Fusion 360' },
+              { icon: '📘', name: 'Relevant Courses', meta: 'Engineering Graphics, Circuit Analysis, Fluid Mechanics, Manufacturing Processes, and Introductory Programming' },
+              { icon: '🤝', name: 'Clubs and Teams', meta: 'American Society of Mechanical Engineers (member), Formula SAE team, ASME project group, and FIRST Robotics (Team 7788)' },
+              { icon: '💻', name: 'Software', meta: 'MATLAB, AutoCAD, Creo, Inventor, Ansys, MSC Adams, and Fusion 360' },
             ].map((c, k) => (
               <div key={k} className="bg-ghost p-6 rounded-xl border border-primary/20">
                 <div className="flex items-center mb-2">

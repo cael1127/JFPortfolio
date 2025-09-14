@@ -18,13 +18,13 @@ const Home = ({ setCurrentPage }) => {
           </AnimatedCard>
           <AnimatedCard delay={150} direction="down" className="mb-4">
             <p className="text-xl md:text-2xl text-gray-700">
-              Mechanical engineer — CAD (SolidWorks/Fusion), FEA, DFM/DFA
+              Mechanical engineer — 3D design in SolidWorks and Fusion 360, strength testing, and designs that are easy to manufacture and assemble
             </p>
           </AnimatedCard>
           <AnimatedCard delay={250} direction="down" className="mb-8">
             <p className="text-sm md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              I deliver manufacturable designs with GD&T, tolerance analysis, and FEA‑backed validation. 
-              Explore capabilities, projects, and a concise career timeline.
+              I create designs you can build, with clear dimensions and tolerances, careful tolerance checks, and strength verification using engineering simulations.
+              Explore my skills, projects, and a quick career timeline.
             </p>
           </AnimatedCard>
 
@@ -58,29 +58,29 @@ const Home = ({ setCurrentPage }) => {
               <div className="bg-primary text-white w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300 group-hover:bg-secondary">
                 <span className="text-2xl group-hover:scale-110 transition-transform duration-300">📐</span>
               </div>
-              <h3 className="font-semibold mb-2 group-hover:text-teal-400 transition-colors">CAD</h3>
-              <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">SolidWorks, Fusion 360, Onshape</p>
+              <h3 className="font-semibold mb-2 group-hover:text-teal-400 transition-colors">3D Design</h3>
+              <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">SolidWorks, Fusion 360, and Onshape</p>
             </AnimatedCard>
             <AnimatedCard delay={300} direction="up" className="text-center hover:scale-105 transition-all duration-300 group cursor-pointer">
               <div className="bg-secondary text-white w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300 group-hover:bg-accent">
                 <span className="text-2xl group-hover:scale-110 transition-transform duration-300">🧮</span>
               </div>
-              <h3 className="font-semibold mb-2 group-hover:text-green-400 transition-colors">Analysis</h3>
-              <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">FEA, CFD, Tolerance Stack-up</p>
+              <h3 className="font-semibold mb-2 group-hover:text-green-400 transition-colors">Engineering Analysis</h3>
+              <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">Structural and fluid simulations, and careful tolerance planning</p>
             </AnimatedCard>
             <AnimatedCard delay={400} direction="up" className="text-center hover:scale-105 transition-all duration-300 group cursor-pointer">
               <div className="bg-accent text-white w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300 group-hover:bg-secondary">
                 <span className="text-2xl group-hover:scale-110 transition-transform duration-300">🏭</span>
               </div>
               <h3 className="font-semibold mb-2 group-hover:text-emerald-400 transition-colors">Manufacturing</h3>
-              <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">CNC, Sheet Metal, DFM/DFA</p>
+              <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">Machining, sheet‑metal work, and designs that are easy to build</p>
             </AnimatedCard>
             <AnimatedCard delay={500} direction="right" className="text-center hover:scale-105 transition-all duration-300 group cursor-pointer">
               <div className="bg-primary text-white w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300 group-hover:bg-secondary">
                 <span className="text-2xl group-hover:scale-110 transition-transform duration-300">📝</span>
               </div>
               <h3 className="font-semibold mb-2 group-hover:text-teal-400 transition-colors">Documentation</h3>
-              <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">Drawings, BOM, ECOs</p>
+              <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">Clear drawings, bills of materials, and change tracking</p>
             </AnimatedCard>
           </div>
         </div>

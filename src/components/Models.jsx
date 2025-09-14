@@ -19,16 +19,15 @@ const Models = () => {
         </div>
 
         <p className="text-gray-300 mb-6 max-w-3xl">
-          Below are embedded 3D models you can rotate, zoom, and inspect. We'll swap these with
-          portfolio-specific assemblies or parts. These embeds are mobile friendly and support
-          full-screen viewing.
+          Below are interactive 3D models you can rotate, zoom, and explore. We will replace these
+          with examples from the portfolio. They work well on phones and support full‑screen viewing.
         </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div className="bg-ghost border border-primary/20 rounded-xl overflow-hidden">
             <div className="p-4">
               <h3 className="font-semibold mb-2">Local 3D Viewer (Placeholder)</h3>
-              <p className="text-gray-600 text-sm mb-4">This viewer runs fully in the browser with orbit controls.</p>
+              <p className="text-gray-600 text-sm mb-4">This viewer runs in your browser and lets you look around freely.</p>
               <ThreeViewer />
             </div>
           </div>
@@ -36,7 +35,7 @@ const Models = () => {
           <div className="bg-ghost border border-primary/20 rounded-xl overflow-hidden">
             <div className="p-4">
               <h3 className="font-semibold mb-2">Exploded Assembly Demo</h3>
-              <p className="text-gray-600 text-sm mb-4">Showcase part relationships and motion planning.</p>
+              <p className="text-gray-600 text-sm mb-4">Shows how parts fit together and move apart.</p>
               <ExplodedAssembly />
             </div>
           </div>
@@ -60,7 +59,7 @@ const Models = () => {
             </div>
             <div className="p-4 border-t border-primary/10">
               <h3 className="font-semibold">Sample Mechanical Assembly</h3>
-              <p className="text-gray-600 text-sm">Pan, rotate, and zoom to explore geometry.</p>
+              <p className="text-gray-600 text-sm">Pan, rotate, and zoom to explore the shape.</p>
             </div>
           </div>
 
@@ -83,15 +82,15 @@ const Models = () => {
             </div>
             <div className="p-4 border-t border-primary/10">
               <h3 className="font-semibold">Precision Part</h3>
-              <p className="text-gray-600 text-sm">Replace with your own CAD export.</p>
+              <p className="text-gray-600 text-sm">Replace with your own 3D model export.</p>
             </div>
           </div>
         </div>
 
         <div className="mt-8 text-gray-400 text-sm">
-          Note: For local CAD, we can integrate `@react-three/fiber` and `@react-three/drei` to load GLTF/GLB
-          exports, add section cuts, orbit controls, and annotations. Embeds shown here require no additional
-          dependencies and are quick to deploy.
+          Note: We can also load local 3D files for viewing in the browser and add helpful tools like
+          cut‑away views, free camera controls, and callouts. The examples above are simple embeds and
+          are quick to set up.
         </div>
       </div>
     </div>

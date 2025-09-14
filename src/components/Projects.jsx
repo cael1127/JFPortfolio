@@ -14,10 +14,10 @@ const Projects = ({ setCurrentPage }) => {
   return (
     <div className="min-h-screen text-white">
       <div className="container mx-auto px-3 sm:px-4 py-6 sm:py-8">
-        <h2 className="text-4xl font-bold mb-8 text-green-400">Projects</h2>
+        <h2 className="text-4xl font-bold mb-8 text-green-400 text-center">Projects</h2>
 
         {/* Tab Navigation */}
-        <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
+        <div className="flex flex-wrap gap-2 mb-6 sm:mb-8 justify-center">
           {tabs.map((tab) => (
             <button
               key={tab.id}
@@ -46,9 +46,9 @@ const Projects = ({ setCurrentPage }) => {
         {activeTab === 'portfolio' && (
           <div className="space-y-8">
             <div className="bg-gradient-to-br from-gray-800 to-gray-700 p-6 rounded-xl border border-gray-600">
-              <h3 className="text-2xl font-bold text-white mb-4">Portfolio projects</h3>
-              <p className="text-gray-300 mb-6 leading-relaxed">
-                Selected work across software systems, data pipelines, and applied ML.
+              <h3 className="text-2xl font-bold text-white mb-4 text-center">Portfolio projects</h3>
+              <p className="text-gray-300 mb-6 leading-relaxed text-center">
+                Selected work across software systems, data pipelines, and practical machine learning.
               </p>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
@@ -62,7 +62,7 @@ const Projects = ({ setCurrentPage }) => {
                     </div>
                   </div>
                   <p className="text-gray-300 text-sm mb-3 sm:mb-4 leading-relaxed">
-                    SPA built with React and Tailwind; interactive demo launcher.
+                    Single‑page website built with React and Tailwind CSS, with an interactive demo launcher.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="bg-gray-600 text-white px-2 py-1 rounded text-xs">React</span>
@@ -76,11 +76,11 @@ const Projects = ({ setCurrentPage }) => {
                     <div className="text-3xl mr-3">🔗</div>
                     <div>
                       <h4 className="text-lg font-semibold text-white">Blockchain Supply Chain</h4>
-                      <p className="text-gray-400 text-sm">Solidity, Web3.js, React</p>
+                      <p className="text-gray-400 text-sm">Solidity, Web3 JavaScript tools, React</p>
                     </div>
                   </div>
                   <p className="text-gray-300 text-sm mb-4 leading-relaxed">
-                    On-chain traceability via Solidity contracts and Web3 integration.
+                    Product tracking on a public ledger using smart contracts and Web3 integration.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="bg-gray-600 text-white px-2 py-1 rounded text-xs">Solidity</span>
@@ -94,11 +94,11 @@ const Projects = ({ setCurrentPage }) => {
                     <div className="text-3xl mr-3">🌊</div>
                     <div>
                       <h4 className="text-lg font-semibold text-white">Smart Aquaculture</h4>
-                      <p className="text-gray-400 text-sm">IoT, React, Machine Learning</p>
+                      <p className="text-gray-400 text-sm">Connected sensors, React, and machine learning</p>
                     </div>
                   </div>
                   <p className="text-gray-300 text-sm mb-4 leading-relaxed">
-                    IoT telemetry ingest + predictive models for husbandry alerts.
+                    Collects sensor readings and predicts when to take action using simple models.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="bg-gray-600 text-white px-2 py-1 rounded text-xs">IoT</span>
@@ -112,11 +112,11 @@ const Projects = ({ setCurrentPage }) => {
                     <div className="text-3xl mr-3">🚚</div>
                     <div>
                       <h4 className="text-lg font-semibold text-white">Smart Logistics</h4>
-                      <p className="text-gray-400 text-sm">React, AI/ML, GPS Integration</p>
+                      <p className="text-gray-400 text-sm">React, artificial intelligence, and GPS integration</p>
                     </div>
                   </div>
                   <p className="text-gray-300 text-sm mb-4 leading-relaxed">
-                    Fleet tracking + route optimization using geofencing and ETA models.
+                    Tracks vehicles and finds faster routes using location fences and arrival‑time estimates.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="bg-gray-600 text-white px-2 py-1 rounded text-xs">React</span>
@@ -130,11 +130,11 @@ const Projects = ({ setCurrentPage }) => {
                     <div className="text-3xl mr-3">🏥</div>
                     <div>
                       <h4 className="text-lg font-semibold text-white">Healthcare Analytics</h4>
-                      <p className="text-gray-400 text-sm">React, AI/ML, HIPAA Compliance</p>
+                      <p className="text-gray-400 text-sm">React, artificial intelligence, and privacy‑focused workflows</p>
                     </div>
                   </div>
                   <p className="text-gray-300 text-sm mb-4 leading-relaxed">
-                    Patient telemetry analytics with risk scoring (PHI‑safe workflows).
+                    Analyzes patient signals and highlights risk while protecting private health information.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="bg-gray-600 text-white px-2 py-1 rounded text-xs">React</span>
@@ -148,11 +148,11 @@ const Projects = ({ setCurrentPage }) => {
                     <div className="text-3xl mr-3">💰</div>
                     <div>
                       <h4 className="text-lg font-semibold text-white">Financial Analytics</h4>
-                      <p className="text-gray-400 text-sm">React, Financial APIs, Data Viz</p>
+                      <p className="text-gray-400 text-sm">React, financial data feeds, and data visualizations</p>
                     </div>
                   </div>
                   <p className="text-gray-300 text-sm mb-4 leading-relaxed">
-                    Real‑time market ingest + portfolio analytics and alerting.
+                    Brings in live market data, shows portfolio insights, and sends alerts.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="bg-gray-600 text-white px-2 py-1 rounded text-xs">React</span>
