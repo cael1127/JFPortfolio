@@ -5,15 +5,15 @@ const MEPortfolio = ({ setCurrentPage }) => {
 
   return (
     <div className="min-h-screen text-gray-900" style={{background: 'transparent'}}>
-      <div className="container mx-auto px-4 py-10">
+      <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-10">
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-4xl font-bold gradient-text">Mechanical Engineering Portfolio</h1>
-          <div className="flex gap-2">
+          <div className="flex gap-2 flex-wrap">
             <a
               href="/Justis-Findley-Resume.pdf"
               target="_blank"
               rel="noreferrer"
-              className="bg-gray-800 hover:bg-gray-700 text-ghost border border-gray-700 px-4 py-2 rounded-lg transition-colors"
+              className="bg-gray-800 hover:bg-gray-700 text-ghost border border-gray-700 px-3 sm:px-4 py-2 rounded-lg transition-colors"
             >
               Download Resume
             </a>
@@ -21,13 +21,13 @@ const MEPortfolio = ({ setCurrentPage }) => {
               href="https://www.linkedin.com/in/Justis-Findley"
               target="_blank"
               rel="noreferrer"
-              className="bg-primary hover:bg-secondary text-white font-medium px-4 py-2 rounded-lg transition-colors"
+              className="bg-primary hover:bg-secondary text-white font-medium px-3 sm:px-4 py-2 rounded-lg transition-colors"
             >
               LinkedIn
             </a>
             <button
               onClick={() => setCurrentPage('models')}
-              className="bg-primary/80 hover:bg-secondary text-white font-medium px-4 py-2 rounded-lg transition-colors"
+              className="bg-primary/80 hover:bg-secondary text-white font-medium px-3 sm:px-4 py-2 rounded-lg transition-colors"
             >
               Interactive 3D Models
             </button>
@@ -35,7 +35,7 @@ const MEPortfolio = ({ setCurrentPage }) => {
         </div>
 
         {/* Objective & Education */}
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
+        <div className="grid md:grid-cols-2 gap-4 sm:gap-6 mb-8">
           <div className="bg-ghost p-6 rounded-xl border border-primary/20">
             <h2 className="text-xl font-semibold mb-2">Objective</h2>
             <p className="text-gray-700 text-sm">
@@ -51,7 +51,7 @@ const MEPortfolio = ({ setCurrentPage }) => {
           </div>
         </div>
 
-        <div className="flex flex-wrap gap-2 mb-8">
+        <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
           {[
             { id: 'projects', label: 'Projects' },
             { id: 'experience', label: 'Experience' },
@@ -60,7 +60,7 @@ const MEPortfolio = ({ setCurrentPage }) => {
             <button
               key={tab.id}
               onClick={() => setActiveSection(tab.id)}
-              className={'px-5 py-3 rounded-lg transition-colors ' + (
+              className={'px-4 sm:px-5 py-2.5 sm:py-3 rounded-lg transition-colors ' + (
                 activeSection === tab.id ? 'bg-primary text-white' : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
               )}
             >

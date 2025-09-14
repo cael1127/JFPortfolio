@@ -2,8 +2,8 @@ import React from 'react';
 
 const Experience = () => {
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      <div className="container mx-auto px-2 sm:px-4 py-6 sm:py-8">
+    <div className="min-h-screen text-white">
+      <div className="container mx-auto px-3 sm:px-4 py-6 sm:py-8">
         <h2 className="text-4xl font-bold mb-8 text-green-400">Experience</h2>
         
         <div className="bg-gradient-to-br from-green-900 via-teal-800 to-cyan-800 p-8 rounded-xl border border-green-800 mb-8">

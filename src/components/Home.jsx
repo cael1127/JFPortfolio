@@ -9,10 +9,10 @@ const Home = ({ setCurrentPage }) => {
   return (
     <div className="min-h-screen text-gray-900 relative overflow-x-hidden" style={{background: 'transparent'}}>
       {/* Hero Section */}
-      <div className="container mx-auto px-4 py-16 relative z-10 snap-section">
+      <div className="container mx-auto px-3 sm:px-4 py-12 sm:py-16 relative z-10 snap-section">
         <div className="text-center max-w-4xl mx-auto">
           <AnimatedCard delay={0} direction="down" className="mb-6">
-            <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-7xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight">
               Justis Findley
             </h1>
           </AnimatedCard>
@@ -22,7 +22,7 @@ const Home = ({ setCurrentPage }) => {
             </p>
           </AnimatedCard>
           <AnimatedCard delay={250} direction="down" className="mb-8">
-            <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
               I deliver manufacturable designs with GD&T, tolerance analysis, and FEA‑backed validation. 
               Explore capabilities, projects, and a concise career timeline.
             </p>

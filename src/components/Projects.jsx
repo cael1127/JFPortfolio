@@ -12,17 +12,17 @@ const Projects = ({ setCurrentPage }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
-      <div className="container mx-auto px-2 sm:px-4 py-6 sm:py-8">
+    <div className="min-h-screen text-white">
+      <div className="container mx-auto px-3 sm:px-4 py-6 sm:py-8">
         <h2 className="text-4xl font-bold mb-8 text-green-400">Projects</h2>
 
         {/* Tab Navigation */}
-        <div className="flex flex-wrap gap-2 mb-8">
+        <div className="flex flex-wrap gap-2 mb-6 sm:mb-8">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={'px-6 py-3 rounded-lg transition-colors ' + (
+              className={'px-4 sm:px-6 py-2.5 sm:py-3 rounded-lg transition-colors ' + (
                 activeTab === tab.id
                   ? 'bg-green-600 text-white'
                   : 'bg-gray-700 text-gray-300 hover:bg-gray-600'
@@ -51,9 +51,9 @@ const Projects = ({ setCurrentPage }) => {
                 Selected work across software systems, data pipelines, and applied ML.
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {/* Portfolio Project Cards */}
-                <div className="bg-gray-800 p-6 rounded-lg border border-gray-600 hover:border-green-400 transition-colors">
+                <div className="bg-gray-800 p-4 sm:p-6 rounded-lg border border-gray-600 hover:border-green-400 transition-colors">
                   <div className="flex items-center mb-4">
                     <div className="text-3xl mr-3">🌐</div>
                     <div>
@@ -61,7 +61,7 @@ const Projects = ({ setCurrentPage }) => {
                       <p className="text-gray-400 text-sm">React, Tailwind CSS</p>
                     </div>
                   </div>
-                  <p className="text-gray-300 text-sm mb-4 leading-relaxed">
+                  <p className="text-gray-300 text-sm mb-3 sm:mb-4 leading-relaxed">
                     SPA built with React and Tailwind; interactive demo launcher.
                   </p>
                   <div className="flex flex-wrap gap-2">

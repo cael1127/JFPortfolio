@@ -61,7 +61,7 @@ const ContactModal = ({ isOpen, onClose }) => {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-gray-900 rounded-lg shadow-xl max-w-md w-full max-h-[90vh] overflow-y-auto">
+      <div className="bg-gray-900 rounded-lg shadow-xl w-full max-w-sm sm:max-w-md max-h-[90vh] overflow-y-auto">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-700">
           <h2 className="text-xl font-bold text-white">Get in touch</h2>
@@ -78,7 +78,7 @@ const ContactModal = ({ isOpen, onClose }) => {
         {/* Quick Contact Options */}
         <div className="p-6 border-b border-gray-700">
           <h3 className="text-lg font-semibold text-white mb-4">Quick contact</h3>
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-2 sm:gap-3">
             <button
               onClick={() => handleDirectContact('email')}
               className="flex items-center justify-center space-x-2 bg-teal-600 hover:bg-teal-700 text-white px-4 py-3 rounded-lg transition-colors"
@@ -132,7 +132,7 @@ const ContactModal = ({ isOpen, onClose }) => {
         </div>
 
         {/* Contact Form */}
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           <h3 className="text-lg font-semibold text-white mb-4">Send a message</h3>
           
           {submitStatus === 'success' ? (

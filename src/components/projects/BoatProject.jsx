@@ -3,11 +3,11 @@ import React from 'react';
 const BoatProject = () => {
   return (
     <div className="min-h-screen text-gray-900" style={{background: 'transparent'}}>
-      <div className="container mx-auto px-4 py-10">
+      <div className="container mx-auto px-3 sm:px-4 py-8 sm:py-10">
         <h1 className="text-3xl font-bold mb-2">30‑ft boat restoration</h1>
         <p className="text-gray-600 mb-6">Mar 2021 — May 2022</p>
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
-          <div className="md:col-span-2 bg-ghost p-6 rounded-xl border border-primary/20">
+        <div className="grid md:grid-cols-3 gap-4 sm:gap-6 mb-8">
+          <div className="md:col-span-2 bg-ghost p-4 sm:p-6 rounded-xl border border-primary/20">
             <h2 className="text-xl font-semibold mb-3">Overview</h2>
             <ul className="list-disc list-inside text-gray-700 space-y-2 leading-relaxed">
               <li>Restored seaworthiness; verified systems and safety equipment.</li>
@@ -15,7 +15,7 @@ const BoatProject = () => {
               <li>Coordinated vendors and materials; managed critical path.</li>
             </ul>
           </div>
-          <div className="bg-ghost p-6 rounded-xl border border-primary/20">
+          <div className="bg-ghost p-4 sm:p-6 rounded-xl border border-primary/20">
             <h2 className="text-xl font-semibold mb-3">Skills</h2>
             <div className="flex flex-wrap gap-2">
               {['Fabrication','Bracket Design','Fasteners','Marine'].map((t) => (
@@ -24,7 +24,7 @@ const BoatProject = () => {
             </div>
           </div>
         </div>
-        <div className="bg-ghost p-6 rounded-xl border border-primary/20">
+        <div className="bg-ghost p-4 sm:p-6 rounded-xl border border-primary/20">
           <h2 className="text-xl font-semibold mb-3">Gallery</h2>
           <p className="text-gray-600">Add photos in public/ (e.g., boat-*.jpg) and reference them.</p>
         </div>
