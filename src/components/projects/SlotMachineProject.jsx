@@ -32,7 +32,7 @@ const SlotMachineProject = () => {
               <img 
                 src="/slotpic.JPEG" 
                 alt="Slot machine restoration project"
-                className="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                className="w-full h-64 object-contain rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 bg-gray-100"
               />
               <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 rounded-lg flex items-center justify-center">
                 <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium">
@@ -46,7 +46,7 @@ const SlotMachineProject = () => {
               <video 
                 src="/slotvid.MP4" 
                 controls
-                className="w-full h-64 object-cover rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+                className="w-full h-64 object-contain rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 bg-gray-100"
                 poster="/slotpic.JPEG"
               >
                 Your browser does not support the video tag.
