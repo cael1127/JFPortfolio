@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stage } from '@react-three/drei';
+import STLModel from './STLModel';
 
 const Placeholder = () => (
   <mesh>
@@ -9,7 +10,7 @@ const Placeholder = () => (
   </mesh>
 );
 
-const ThreeViewer = ({ children }) => {
+const ThreeViewer = ({ children, modelPath, modelColor, modelScale }) => {
   return (
     <div className="w-full h-96 bg-gray-800 rounded-xl overflow-hidden">
       <Canvas shadows dpr={[1, 2]} camera={{ position: [2.5, 2.5, 2.5], fov: 50 }}>
@@ -17,7 +18,11 @@ const ThreeViewer = ({ children }) => {
         <directionalLight position={[5, 5, 5]} intensity={0.8} castShadow />
         <Suspense fallback={null}>
           <Stage preset="rembrandt" intensity={1} environment="city">
-            {children || <Placeholder />}
+            {modelPath ? (
+              <STLModel modelPath={modelPath} color={modelColor} scale={modelScale} />
+            ) : (
+              children || <Placeholder />
+            )}
           </Stage>
         </Suspense>
         <OrbitControls enableDamping makeDefault />

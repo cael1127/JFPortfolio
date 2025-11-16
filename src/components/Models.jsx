@@ -3,94 +3,111 @@ import ThreeViewer from './ThreeViewer';
 import ExplodedAssembly from './ExplodedAssembly';
 
 const Models = () => {
+  // Featured STL model - Bathroom Rack
+  const featuredModel = {
+    path: '/BathRoom Rack v6.stl',
+    title: 'Bathroom Rack',
+    description: 'A functional and elegant bathroom rack design featuring modern aesthetics and practical storage solutions. Rotate, zoom, and explore the detailed 3D model.',
+    color: '#006f9f',
+  };
+
+  // Additional STL models can be added here
+  const stlModels = [
+    // Add more models here as needed
+  ];
+
   return (
     <div className="min-h-screen text-gray-900" style={{background: 'transparent'}}>
-      <div className="container mx-auto px-4 py-10">
-        <div className="flex items-center justify-between mb-6">
-          <h1 className="text-4xl font-bold">Interactive 3D Models</h1>
-          <a
-            href="https://sketchfab.com/feed"
-            target="_blank"
-            rel="noreferrer"
-            className="text-sm text-primary hover:text-secondary"
-          >
-            Explore more models
-          </a>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        {/* Header */}
+        <div className="mb-12 text-center">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-4">
+            Interactive 3D Models
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Explore interactive 3D models loaded directly in your browser using WebGL. 
+            Rotate, zoom, and inspect detailed mechanical designs with full camera controls.
+          </p>
         </div>
 
-        <p className="text-gray-300 mb-6 max-w-3xl">
-          Below are interactive 3D models you can rotate, zoom, and explore. We will replace these
-          with examples from the portfolio. They work well on phones and support full‑screen viewing.
-        </p>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="bg-ghost border border-primary/20 rounded-xl overflow-hidden">
-            <div className="p-4">
-              <h3 className="font-semibold mb-2">Local 3D Viewer (Placeholder)</h3>
-              <p className="text-gray-600 text-sm mb-4">This viewer runs in your browser and lets you look around freely.</p>
-              <ThreeViewer />
-            </div>
-          </div>
-
-          <div className="bg-ghost border border-primary/20 rounded-xl overflow-hidden">
-            <div className="p-4">
-              <h3 className="font-semibold mb-2">Exploded Assembly Demo</h3>
-              <p className="text-gray-600 text-sm mb-4">Shows how parts fit together and move apart.</p>
-              <ExplodedAssembly />
-            </div>
-          </div>
-
-          <div className="bg-ghost border border-primary/20 rounded-xl overflow-hidden">
-            <div className="aspect-video">
-              <iframe
-                title="3D Model 1"
-                className="w-full h-full"
-                frameBorder="0"
-                allowFullScreen
-                mozallowfullscreen="true"
-                webkitallowfullscreen="true"
-                allow="autoplay; fullscreen; xr-spatial-tracking"
-                xr-spatial-tracking="true"
-                execution-while-out-of-viewport="true"
-                execution-while-not-rendered="true"
-                web-share="true"
-                src="https://sketchfab.com/models/7w7pAfrMBg8XkXjaYvQz7fJ2K3NB/embed"
-              />
-            </div>
-            <div className="p-4 border-t border-primary/10">
-              <h3 className="font-semibold">Sample Mechanical Assembly</h3>
-              <p className="text-gray-600 text-sm">Pan, rotate, and zoom to explore the shape.</p>
-            </div>
-          </div>
-
-          <div className="bg-ghost border border-primary/20 rounded-xl overflow-hidden">
-            <div className="aspect-video">
-              <iframe
-                title="3D Model 2"
-                className="w-full h-full"
-                frameBorder="0"
-                allowFullScreen
-                mozallowfullscreen="true"
-                webkitallowfullscreen="true"
-                allow="autoplay; fullscreen; xr-spatial-tracking"
-                xr-spatial-tracking="true"
-                execution-while-out-of-viewport="true"
-                execution-while-not-rendered="true"
-                web-share="true"
-                src="https://sketchfab.com/models/3w3yG6S4gU6v6yqvMZ7m3gXqJgkK/embed"
-              />
-            </div>
-            <div className="p-4 border-t border-primary/10">
-              <h3 className="font-semibold">Precision Part</h3>
-              <p className="text-gray-600 text-sm">Replace with your own 3D model export.</p>
+        {/* Featured Model - Bathroom Rack */}
+        <div className="mb-16">
+          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+            <div className="p-8 sm:p-12">
+              <div className="mb-6">
+                <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                  Featured Design
+                </div>
+                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{featuredModel.title}</h2>
+                <p className="text-lg text-gray-700 leading-relaxed max-w-3xl">
+                  {featuredModel.description}
+                </p>
+              </div>
+              <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
+                <ThreeViewer 
+                  modelPath={featuredModel.path} 
+                  modelColor={featuredModel.color}
+                  modelScale={1}
+                />
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 text-gray-400 text-sm">
-          Note: We can also load local 3D files for viewing in the browser and add helpful tools like
-          cut‑away views, free camera controls, and callouts. The examples above are simple embeds and
-          are quick to set up.
+        {/* Other Models Section */}
+        {(stlModels.length > 0 || true) && (
+          <div className="mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-8 text-center">Additional Models</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-3 text-gray-900">Local 3D Viewer</h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed">This viewer runs in your browser and lets you look around freely.</p>
+                  <ThreeViewer />
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                <div className="p-6">
+                  <h3 className="text-xl font-bold mb-3 text-gray-900">Exploded Assembly Demo</h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed">Shows how parts fit together and move apart.</p>
+                  <ExplodedAssembly />
+                </div>
+              </div>
+
+              {stlModels.map((model, index) => (
+                <div key={index} className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-3 text-gray-900">{model.title}</h3>
+                    <p className="text-gray-600 mb-4 leading-relaxed">{model.description}</p>
+                    <ThreeViewer 
+                      modelPath={model.path} 
+                      modelColor={model.color}
+                      modelScale={1}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Info Section */}
+        <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
+          <h3 className="text-xl font-bold mb-4 text-gray-900">About 3D Model Viewing</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            All models are loaded directly in your browser using Three.js WebGL rendering. 
+            You can interact with the models using mouse controls:
+          </p>
+          <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
+            <li><strong>Rotate:</strong> Click and drag to rotate the model</li>
+            <li><strong>Zoom:</strong> Scroll or pinch to zoom in/out</li>
+            <li><strong>Pan:</strong> Right-click and drag (or middle mouse button) to pan</li>
+          </ul>
+          <p className="text-sm text-gray-600">
+            To add more STL models, place them in the <code className="bg-gray-100 px-2 py-1 rounded text-primary font-mono">public/</code> directory
+            and update the models array in <code className="bg-gray-100 px-2 py-1 rounded text-primary font-mono">src/components/Models.jsx</code>.
+          </p>
         </div>
       </div>
     </div>

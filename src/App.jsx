@@ -5,6 +5,7 @@ import Freelancing from './components/Freelancing';
 import MEPortfolio from './components/MEPortfolio';
 import Models from './components/Models';
 import ResumePage from './components/ResumePage';
+import Contact from './components/Contact';
 import ChevelleProject from './components/projects/ChevelleProject';
 import BoatProject from './components/projects/BoatProject';
 import SlotMachineProject from './components/projects/SlotMachineProject';
@@ -94,6 +95,8 @@ function App() {
         return <Freelancing setCurrentPage={navigateTo} />;
       case 'resume':
         return <ResumePage />;
+      case 'contact':
+        return <Contact />;
       case 'proj-chevelle':
         return <ChevelleProject />;
       case 'proj-boat':
@@ -281,20 +284,31 @@ function App() {
       <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 bg-white text-gray-900 px-3 py-2 rounded shadow">Skip to content</a>
       <ScrollProgress />
       <EngineeringBackground />
-      <nav className="bg-white/90 border-b border-gray-200 sticky top-0 z-40 backdrop-blur">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <button onClick={() => navigateTo('home')} className="flex items-center space-x-2 text-gray-900 font-semibold hover:text-teal-600 transition-colors">
-            <span className="text-2xl">JF</span>
-            <span>Justis Findley</span>
+      <nav className="bg-white/95 border-b border-gray-200/50 sticky top-0 z-40 backdrop-blur-md shadow-sm">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+          <button onClick={() => navigateTo('home')} className="flex items-center space-x-3 text-gray-900 font-bold hover:text-primary transition-colors group">
+            <div className="bg-gradient-to-br from-primary to-secondary text-white w-10 h-10 rounded-lg flex items-center justify-center font-extrabold text-lg group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              JF
+            </div>
+            <span className="text-xl font-bold hidden sm:block">Justis Findley</span>
           </button>
-          <div className="hidden md:flex items-center space-x-2">
+          <div className="hidden md:flex items-center space-x-1">
             {[
               { id: 'home', label: 'Home' },
               { id: 'portfolio', label: 'Portfolio' },
               { id: 'models', label: '3D Models' },
               { id: 'resume', label: 'Resume' },
+              { id: 'contact', label: 'Contact' },
             ].map((item) => (
-              <button key={item.id} onClick={() => navigateTo(item.id)} className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${currentPage === item.id ? 'text-white bg-teal-600' : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'}`}>
+              <button 
+                key={item.id} 
+                onClick={() => navigateTo(item.id)} 
+                className={`px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 ${
+                  currentPage === item.id 
+                    ? 'text-white bg-primary shadow-lg shadow-primary/30' 
+                    : 'text-gray-700 hover:text-primary hover:bg-gray-50'
+                }`}
+              >
                 {item.label}
               </button>
             ))}

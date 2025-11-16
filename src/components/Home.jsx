@@ -9,78 +9,98 @@ const Home = ({ setCurrentPage }) => {
   return (
     <div className="min-h-screen text-gray-900 relative overflow-x-hidden" style={{background: 'transparent'}}>
       {/* Hero Section */}
-      <div className="container mx-auto px-3 sm:px-4 py-12 sm:py-16 relative z-10 snap-section">
-        <div className="text-center max-w-4xl mx-auto">
-          <AnimatedCard delay={0} direction="down" className="mb-6">
-            <h1 className="text-4xl md:text-7xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32 relative z-10 snap-section">
+        <div className="text-center max-w-5xl mx-auto">
+          <AnimatedCard delay={0} direction="down" className="mb-8">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-[1.1] tracking-tight">
               Justis Findley
             </h1>
           </AnimatedCard>
-          <AnimatedCard delay={150} direction="down" className="mb-4">
-            <p className="text-xl md:text-2xl text-gray-700">
-              Mechanical engineer — 3D design in SolidWorks and Fusion 360, strength testing, and designs that are easy to manufacture and assemble
+          <AnimatedCard delay={150} direction="down" className="mb-6">
+            <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-800 font-medium leading-tight max-w-4xl mx-auto">
+              Mechanical Engineer
+            </p>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mt-4 max-w-3xl mx-auto leading-relaxed">
+              3D design in SolidWorks and Fusion 360, strength testing, and designs that are easy to manufacture and assemble
             </p>
           </AnimatedCard>
-          <AnimatedCard delay={250} direction="down" className="mb-8">
-            <p className="text-sm md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <AnimatedCard delay={250} direction="down" className="mb-12">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
               I create designs you can build, with clear dimensions and tolerances, careful tolerance checks, and strength verification using engineering simulations.
-              Explore my skills, projects, and a quick career timeline.
             </p>
           </AnimatedCard>
 
           {/* Stat Strip */}
-          <div className="mb-12">
+          <div className="mb-16">
             <StatStrip />
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button
               onClick={() => setCurrentPage('portfolio')}
-              className="bg-primary hover:bg-secondary text-white font-bold py-4 px-8 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-secondary/30 text-lg animate-pulse-slow group relative overflow-hidden"
+              className="group relative bg-primary hover:bg-secondary text-white font-semibold py-4 px-10 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/40 text-lg overflow-hidden"
             >
-              <span className="relative z-10">🧰 View Portfolio</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              <span className="relative z-10 flex items-center gap-2">
+                View Portfolio
+                <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </button>
-            
+            <button
+              onClick={() => setCurrentPage('contact')}
+              className="group relative bg-white hover:bg-gray-50 text-primary border-2 border-primary font-semibold py-4 px-10 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-xl text-lg"
+            >
+              <span className="relative z-10">Get In Touch</span>
+            </button>
           </div>
         </div>
       </div>
 
       {/* Skills Section */}
-      <div className="py-16 relative z-10 snap-section">
-        <div className="container mx-auto px-4">
-          <AnimatedCard delay={0} direction="down" className="mb-12">
-            <h2 className="text-3xl font-bold text-center">Core skills</h2>
+      <div className="py-20 lg:py-28 relative z-10 snap-section">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedCard delay={0} direction="down" className="mb-16">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-4">Core Skills</h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
           </AnimatedCard>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            <AnimatedCard delay={200} direction="left" className="text-center hover:scale-105 transition-all duration-300 group cursor-pointer">
-              <div className="bg-primary text-white w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300 group-hover:bg-secondary">
-                <span className="text-2xl group-hover:scale-110 transition-transform duration-300">📐</span>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            <AnimatedCard delay={200} direction="left" className="group">
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 h-full">
+                <div className="bg-gradient-to-br from-primary to-secondary text-white w-20 h-20 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <span className="text-3xl">📐</span>
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-center text-gray-900 group-hover:text-primary transition-colors">3D Design</h3>
+                <p className="text-gray-600 text-center leading-relaxed">SolidWorks, Fusion 360, and Onshape</p>
               </div>
-              <h3 className="font-semibold mb-2 group-hover:text-teal-400 transition-colors">3D Design</h3>
-              <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">SolidWorks, Fusion 360, and Onshape</p>
             </AnimatedCard>
-            <AnimatedCard delay={300} direction="up" className="text-center hover:scale-105 transition-all duration-300 group cursor-pointer">
-              <div className="bg-secondary text-white w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300 group-hover:bg-accent">
-                <span className="text-2xl group-hover:scale-110 transition-transform duration-300">🧮</span>
+            <AnimatedCard delay={300} direction="up" className="group">
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 h-full">
+                <div className="bg-gradient-to-br from-secondary to-accent text-white w-20 h-20 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <span className="text-3xl">🧮</span>
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-center text-gray-900 group-hover:text-secondary transition-colors">Engineering Analysis</h3>
+                <p className="text-gray-600 text-center leading-relaxed">Structural and fluid simulations, and careful tolerance planning</p>
               </div>
-              <h3 className="font-semibold mb-2 group-hover:text-green-400 transition-colors">Engineering Analysis</h3>
-              <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">Structural and fluid simulations, and careful tolerance planning</p>
             </AnimatedCard>
-            <AnimatedCard delay={400} direction="up" className="text-center hover:scale-105 transition-all duration-300 group cursor-pointer">
-              <div className="bg-accent text-white w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300 group-hover:bg-secondary">
-                <span className="text-2xl group-hover:scale-110 transition-transform duration-300">🏭</span>
+            <AnimatedCard delay={400} direction="up" className="group">
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 h-full">
+                <div className="bg-gradient-to-br from-accent to-primary text-white w-20 h-20 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <span className="text-3xl">🏭</span>
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-center text-gray-900 group-hover:text-accent transition-colors">Manufacturing</h3>
+                <p className="text-gray-600 text-center leading-relaxed">Machining, sheet‑metal work, and designs that are easy to build</p>
               </div>
-              <h3 className="font-semibold mb-2 group-hover:text-emerald-400 transition-colors">Manufacturing</h3>
-              <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">Machining, sheet‑metal work, and designs that are easy to build</p>
             </AnimatedCard>
-            <AnimatedCard delay={500} direction="right" className="text-center hover:scale-105 transition-all duration-300 group cursor-pointer">
-              <div className="bg-primary text-white w-16 h-16 rounded-lg flex items-center justify-center mx-auto mb-4 hover:scale-110 transition-transform duration-300 group-hover:bg-secondary">
-                <span className="text-2xl group-hover:scale-110 transition-transform duration-300">📝</span>
+            <AnimatedCard delay={500} direction="right" className="group">
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 h-full">
+                <div className="bg-gradient-to-br from-primary via-secondary to-accent text-white w-20 h-20 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <span className="text-3xl">📝</span>
+                </div>
+                <h3 className="text-xl font-bold mb-3 text-center text-gray-900 group-hover:text-primary transition-colors">Documentation</h3>
+                <p className="text-gray-600 text-center leading-relaxed">Clear drawings, bills of materials, and change tracking</p>
               </div>
-              <h3 className="font-semibold mb-2 group-hover:text-teal-400 transition-colors">Documentation</h3>
-              <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors">Clear drawings, bills of materials, and change tracking</p>
             </AnimatedCard>
           </div>
         </div>
@@ -89,33 +109,56 @@ const Home = ({ setCurrentPage }) => {
       
 
       {/* Highlighted Sections */}
-      <div className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-center mb-12">Featured work</h2>
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+        <AnimatedCard delay={0} direction="down" className="mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-4">Featured Work</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+        </AnimatedCard>
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           <button
             onClick={() => setCurrentPage('portfolio')}
-            className="bg-gradient-to-br from-primary to-accent hover:from-secondary hover:to-accent p-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-secondary/20 text-left"
+            className="group relative bg-gradient-to-br from-primary via-secondary to-accent p-8 rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/30 text-left overflow-hidden"
           >
-            <div className="text-2xl mb-3 hover:scale-110 transition-transform duration-300">🛠️</div>
-            <h3 className="font-semibold mb-2">Design projects</h3>
-            <p className="text-gray-200 text-sm leading-relaxed">Fixtures, enclosures, frames, and more</p>
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="relative z-10">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 inline-block">🛠️</div>
+              <h3 className="text-2xl font-bold mb-3 text-white">Design Projects</h3>
+              <p className="text-white/90 text-base leading-relaxed">Fixtures, enclosures, frames, and more. Explore detailed project showcases with CAD designs and manufacturing insights.</p>
+              <div className="mt-6 flex items-center text-white font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                View Projects
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </div>
           </button>
           <button
             onClick={() => setCurrentPage('models')}
-            className="bg-gradient-to-br from-secondary to-primary hover:from-accent hover:to-secondary p-6 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 text-left"
+            className="group relative bg-gradient-to-br from-secondary via-accent to-primary p-8 rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-secondary/30 text-left overflow-hidden"
           >
-            <div className="text-2xl mb-3 hover:scale-110 transition-transform duration-300">🧩</div>
-            <h3 className="font-semibold mb-2">Interactive 3D models</h3>
-            <p className="text-gray-200 text-sm leading-relaxed">Rotate, zoom, and explore assemblies</p>
+            <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="relative z-10">
+              <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 inline-block">🧩</div>
+              <h3 className="text-2xl font-bold mb-3 text-white">Interactive 3D Models</h3>
+              <p className="text-white/90 text-base leading-relaxed">Rotate, zoom, and explore STL models directly in your browser. Experience detailed mechanical assemblies.</p>
+              <div className="mt-6 flex items-center text-white font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                Explore Models
+                <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </div>
+            </div>
           </button>
-          
         </div>
       </div>
 
       {/* Timeline */}
-      <div className="container mx-auto px-4 pb-20">
-        <h2 className="text-3xl font-bold text-center mb-6">Career timeline</h2>
-        <div className="max-w-3xl mx-auto">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 pb-20 lg:pb-28">
+        <AnimatedCard delay={0} direction="down" className="mb-12">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-4">Career Timeline</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full"></div>
+        </AnimatedCard>
+        <div className="max-w-4xl mx-auto">
           <Timeline />
         </div>
       </div>

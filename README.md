@@ -4,9 +4,9 @@ A modern, responsive portfolio for showcasing mechanical engineering projects, C
 
 ## Features
 
-- **Modern Design** - Clean dark theme with Justis’ blue/aqua brand palette
+- **Modern Design** - Clean dark theme with Justis' blue/aqua brand palette
 - **Portfolio & Detail Pages** - Chevelle, Boat Restoration, Slot Machine, Torque Plate
-- **Interactive 3D Models** - Sketchfab embeds and local WebGL viewer (Three.js)
+- **Interactive 3D Models** - STL file support with local WebGL viewer (Three.js)
 - **Resume Page** - Embedded PDF viewer and quick download
 - **Responsive Design** - Optimized for all devices and screen sizes
 
@@ -16,7 +16,8 @@ A modern, responsive portfolio for showcasing mechanical engineering projects, C
 - **React (CRA)**
 - **Tailwind CSS**
 - **JavaScript ES6+**
-- **Three.js** via **@react-three/fiber** and **@react-three/drei** (local viewer)
+- **Three.js** via **@react-three/fiber** and **@react-three/drei** (3D rendering)
+- **STLLoader** from Three.js examples (STL file support)
 
 ### Backend (optional folder)
 - Simple Node utilities for demos; not required for portfolio deployment
@@ -30,8 +31,9 @@ Portfolio/
 │  ├── components/
 │  │  ├── Home.jsx
 │  │  ├── MEPortfolio.jsx           # Projects, Experience, Certifications
-│  │  ├── Models.jsx                # 3D embeds + local viewer
-│  │  ├── ThreeViewer.jsx           # @react-three/fiber placeholder viewer
+│  │  ├── Models.jsx                # STL model viewers
+│  │  ├── ThreeViewer.jsx           # @react-three/fiber viewer component
+│  │  ├── STLModel.jsx              # STL file loader component
 │  │  └── projects/
 │  │     ├── ChevelleProject.jsx
 │  │     ├── BoatProject.jsx
@@ -40,7 +42,8 @@ Portfolio/
 │  └── index.js
 ├── public/
 │  ├── index.html
-│  └── Justis-Findley-Resume.pdf    # Place your resume here for Resume page
+│  ├── Justis-Findley-Resume.pdf    # Place your resume here for Resume page
+│  └── *.stl                        # Place STL model files here
 ├── tailwind.config.js
 ├── netlify.toml                     # Netlify build + SPA redirects
 └── README.md
@@ -96,8 +99,36 @@ Configured in `tailwind.config.js` as `primary`, `secondary`, `accent`, `celeste
 
 ## 3D Models
 
-- Local Viewer: `src/components/ThreeViewer.jsx` (React Three Fiber)
-- Embeds: `src/components/Models.jsx` (replace Sketchfab URLs with your own)
+The portfolio supports interactive STL (Stereolithography) 3D models loaded directly in the browser using Three.js.
+
+### Components
+
+- **STLModel.jsx** - Loads and displays STL files using Three.js STLLoader
+- **ThreeViewer.jsx** - Canvas wrapper with lighting, camera controls, and stage preset
+- **Models.jsx** - Main page component that displays multiple STL models
+
+### Adding STL Models
+
+1. Place your STL files in the `public/` directory (e.g., `public/model1.stl`)
+2. Update the `stlModels` array in `src/components/Models.jsx`:
+   ```javascript
+   const stlModels = [
+     {
+       path: '/model1.stl',  // Path relative to public directory
+       title: 'Model Name',
+       description: 'Model description',
+       color: '#006f9f',    // Material color (hex)
+     },
+   ];
+   ```
+
+### Features
+
+- Automatic model centering and scaling
+- Interactive orbit controls (rotate, zoom, pan)
+- Professional lighting with shadows
+- Responsive design for all screen sizes
+- Customizable material colors
 
 ## Netlify Deployment
 
@@ -118,9 +149,15 @@ netlify deploy --build --prod
 1. Create a new component in `src/components/projects/YourProject.jsx`
 2. Link from `MEPortfolio.jsx` with a `setCurrentPage('proj-your')` entry
 
+### Adding 3D Models
+1. Export your CAD models as STL files
+2. Place STL files in the `public/` directory
+3. Update the `stlModels` array in `src/components/Models.jsx` with your model paths and metadata
+
 ### Customizing Styles
 - Tailwind tokens in `tailwind.config.js`
 - Component styles via Tailwind classes
+- 3D model colors can be customized via the `color` property in the model configuration
 
 ## 📱 Browser Support
 
