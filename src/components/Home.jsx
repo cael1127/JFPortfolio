@@ -69,7 +69,9 @@ const Home = ({ setCurrentPage }) => {
             <AnimatedCard delay={200} direction="left" className="group">
               <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 h-full">
                 <div className="bg-gradient-to-br from-primary to-secondary text-white w-20 h-20 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <span className="text-3xl">📐</span>
+                  <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-center text-gray-900 group-hover:text-primary transition-colors">3D Design</h3>
                 <p className="text-gray-600 text-center leading-relaxed">SolidWorks, Fusion 360, and Onshape</p>
@@ -78,7 +80,9 @@ const Home = ({ setCurrentPage }) => {
             <AnimatedCard delay={300} direction="up" className="group">
               <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 h-full">
                 <div className="bg-gradient-to-br from-secondary to-accent text-white w-20 h-20 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <span className="text-3xl">🧮</span>
+                  <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                  </svg>
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-center text-gray-900 group-hover:text-secondary transition-colors">Engineering Analysis</h3>
                 <p className="text-gray-600 text-center leading-relaxed">Structural and fluid simulations, and careful tolerance planning</p>
@@ -87,7 +91,9 @@ const Home = ({ setCurrentPage }) => {
             <AnimatedCard delay={400} direction="up" className="group">
               <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 h-full">
                 <div className="bg-gradient-to-br from-accent to-primary text-white w-20 h-20 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <span className="text-3xl">🏭</span>
+                  <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                  </svg>
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-center text-gray-900 group-hover:text-accent transition-colors">Manufacturing</h3>
                 <p className="text-gray-600 text-center leading-relaxed">Machining, sheet‑metal work, and designs that are easy to build</p>
@@ -96,7 +102,9 @@ const Home = ({ setCurrentPage }) => {
             <AnimatedCard delay={500} direction="right" className="group">
               <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 h-full">
                 <div className="bg-gradient-to-br from-primary via-secondary to-accent text-white w-20 h-20 rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <span className="text-3xl">📝</span>
+                  <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-center text-gray-900 group-hover:text-primary transition-colors">Documentation</h3>
                 <p className="text-gray-600 text-center leading-relaxed">Clear drawings, bills of materials, and change tracking</p>

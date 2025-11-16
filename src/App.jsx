@@ -3,7 +3,6 @@ import Home from './components/Home';
 import DemoOrganizer from './components/DemoOrganizer';
 import Freelancing from './components/Freelancing';
 import MEPortfolio from './components/MEPortfolio';
-import Models from './components/Models';
 import ResumePage from './components/ResumePage';
 import Contact from './components/Contact';
 import ChevelleProject from './components/projects/ChevelleProject';
@@ -12,7 +11,8 @@ import SlotMachineProject from './components/projects/SlotMachineProject';
 import TorquePlateProject from './components/projects/TorquePlateProject';
 import BathroomRackProject from './components/projects/BathroomRackProject';
 import PulleyProject from './components/projects/PulleyProject';
-import MustangJeepVisorProject from './components/projects/MustangJeepVisorProject';
+import MustangRestorationProject from './components/projects/MustangRestorationProject';
+import JeepVisorProject from './components/projects/JeepVisorProject';
 import FirstRoboticsProject from './components/projects/FirstRoboticsProject';
 import AIInterviewSimulator from './components/AIInterviewSimulator';
 import RealTimeCollaboration from './components/RealTimeCollaboration';
@@ -52,6 +52,7 @@ import DeepfakeDetectionDemoPage from './pages/DeepfakeDetectionDemoPage';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Scroll to top when page changes
   useEffect(() => {
@@ -91,8 +92,6 @@ function App() {
         return <Home setCurrentPage={navigateTo} />;
       case 'portfolio':
         return <MEPortfolio setCurrentPage={navigateTo} />;
-      case 'models':
-        return <Models setCurrentPage={navigateTo} />;
       case 'demo-organizer':
         return <DemoOrganizer setCurrentPage={navigateTo} />;
       case 'freelancing':
@@ -113,8 +112,12 @@ function App() {
         return <BathroomRackProject />;
       case 'proj-pulley':
         return <PulleyProject />;
+      case 'proj-mustang-restoration':
+        return <MustangRestorationProject />;
+      case 'proj-jeep-visor':
+        return <JeepVisorProject />;
       case 'proj-mustang-visor':
-        return <MustangJeepVisorProject />;
+        return <JeepVisorProject />; // Backward compatibility
       case 'proj-first-robotics':
         return <FirstRoboticsProject />;
       case 'ai-interview-simulator':
@@ -202,94 +205,6 @@ function App() {
     }
   };
 
-  // Navigation component
-  const Navigation = () => {
-    const navItems = [
-      { id: 'home', label: 'Home', icon: '' },
-      { id: 'portfolio', label: 'Portfolio', icon: '' },
-      { id: 'models', label: '3D Models', icon: '' },
-      { id: 'resume', label: 'Resume', icon: '' },
-    ];
-
-    return (
-      <nav className="bg-gray-800 border-b border-gray-700 sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <div className="flex items-center">
-              <button
-                onClick={() => setCurrentPage('home')}
-                className="flex items-center space-x-2 text-white font-bold text-lg hover:text-teal-400 transition-colors"
-              >
-                <span className="text-2xl">JF</span>
-                <span>Justis Findley</span>
-              </button>
-            </div>
-
-            {/* Desktop Navigation */}
-            <div className="hidden md:block">
-              <div className="flex items-center space-x-1">
-                {navItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => setCurrentPage(item.id)}
-                    className={`px-3 py-2 rounded-md text-sm font-medium transition-all duration-300 hover:scale-105 relative overflow-hidden group ${
-                      currentPage === item.id
-                        ? 'bg-teal-600 text-white shadow-lg shadow-teal-500/30'
-                        : 'text-gray-300 hover:text-white hover:bg-gray-700 hover:shadow-lg hover:shadow-gray-500/30'
-                    }`}
-                  >
-                    <span className="relative z-10">{item.label}</span>
-                    {currentPage === item.id && (
-                      <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-emerald-500 animate-pulse"></div>
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                  </button>
-                ))}
-                
-              </div>
-            </div>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <button
-                onClick={() => {
-                  const mobileMenu = document.getElementById('mobile-menu');
-                  mobileMenu.classList.toggle('hidden');
-                }}
-                className="text-gray-300 hover:text-white p-2"
-              >
-                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          {/* Mobile Navigation */}
-          <div id="mobile-menu" className="hidden md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => setCurrentPage(item.id)}
-                  className={`block w-full text-left px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                    currentPage === item.id
-                      ? 'bg-teal-600 text-white'
-                      : 'text-gray-300 hover:text-white hover:bg-gray-700'
-                  }`}
-                >
-                  {item.label}
-                </button>
-              ))}
-              
-              
-            </div>
-          </div>
-        </div>
-      </nav>
-    );
-  };
 
   return (
     <div className="App min-h-screen relative overflow-x-hidden overscroll-behavior scroll-smooth" style={{background: 'linear-gradient(180deg,#fbfbff,#a1f6ff)'}}>
@@ -324,7 +239,49 @@ function App() {
               </button>
             ))}
           </div>
+          {/* Mobile menu button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="md:hidden text-gray-700 hover:text-primary p-2 transition-colors"
+            aria-label="Toggle menu"
+          >
+            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              {mobileMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
         </div>
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t border-gray-200 py-4">
+            <div className="flex flex-col space-y-2">
+              {[
+                { id: 'home', label: 'Home' },
+                { id: 'portfolio', label: 'Portfolio' },
+                { id: 'resume', label: 'Resume' },
+                { id: 'contact', label: 'Contact' },
+              ].map((item) => (
+                <button 
+                  key={item.id} 
+                  onClick={() => {
+                    navigateTo(item.id);
+                    setMobileMenuOpen(false);
+                  }} 
+                  className={`px-4 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 text-left ${
+                    currentPage === item.id 
+                      ? 'text-white bg-primary shadow-lg shadow-primary/30' 
+                      : 'text-gray-700 hover:text-primary hover:bg-gray-50'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
       </nav>
       <main id="main" className="relative z-10 overflow-x-hidden snap-container">
         <div key={currentPage} className="page-enter page-enter-active">

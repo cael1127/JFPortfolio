@@ -5,7 +5,7 @@ A modern, responsive portfolio for showcasing mechanical engineering projects, C
 ## Features
 
 - **Modern Design** - Clean dark theme with Justis' blue/aqua brand palette
-- **Portfolio & Detail Pages** - Chevelle, Boat Restoration, Slot Machine, Torque Plate
+- **Portfolio & Detail Pages** - Chevelle, Yacht Restoration, Slot Machine, Torque Plate
 - **Interactive 3D Models** - STL file support with local WebGL viewer (Three.js)
 - **Resume Page** - Embedded PDF viewer and quick download
 - **Responsive Design** - Optimized for all devices and screen sizes
@@ -80,7 +80,7 @@ Portfolio/
 
 ## Portfolio Sections
 
-- Projects: Chevelle Restoration, 30 ft Boat Restoration, Slot Machine Restoration, Torque Plate
+- Projects: Chevelle Restoration, 30 ft Yacht Restoration, Slot Machine Restoration, Torque Plate
 - Experience: Port Lavaca Auto Group (Head Porter), Domino’s (Delivery Driver)
 - Certifications: Apprenticeship Electrician (exp 05/10/26), NCCER Electrical 1 & 2, ServSafe
 - Education: Texas A&M University–Corpus Christi — B.S. Mechanical Engineering (Expected May 2027)

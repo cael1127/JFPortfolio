@@ -79,56 +79,54 @@ const MEPortfolio = ({ setCurrentPage }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {[ 
               {
-                icon: '🚗',
                 title: '1968 Chevy Chevelle Restoration',
                 tech: 'Fabrication, Welding, Custom Parts',
                 desc: 'Designed and restored vehicle systems; manufactured custom parts while balancing workload with school and sports.',
                 route: 'proj-chevelle'
               },
               {
-                icon: '🛥️',
-                title: '30 ft Boat Restoration',
+                title: '30 ft Yacht Restoration',
                 tech: 'Fabrication, Bracket Design, Cost Reduction',
                 desc: 'Restored vessel to working condition and fabricated custom brackets to reduce cost.',
                 route: 'proj-boat'
               },
               {
-                icon: '🎰',
                 title: 'Slot Machine Restoration',
                 tech: 'Arduino, Embedded, Reverse Engineering',
                 desc: 'Reprogrammed the system using an Arduino to replace the outdated onboard computer.',
                 route: 'proj-slot'
               },
               {
-                icon: '📏',
                 title: 'Torque Plate Project',
                 tech: 'Team Manufacturing, Report Writing',
                 desc: 'Worked with a team to manufacture a torque plate and authored documentation on the full process.',
                 route: 'proj-torque'
               },
               {
-                icon: '🚿',
                 title: 'Bathroom Rack Design',
                 tech: 'CAD Design, 3D Modeling, Product Design',
                 desc: 'A functional and elegant bathroom rack design featuring modern aesthetics and practical storage solutions. Includes interactive 3D model with implode animation.',
                 route: 'proj-bathroom-rack'
               },
               {
-                icon: '⚙️',
                 title: 'Pulley Manufacturing Project',
                 tech: 'Manufacturing, Machining, Quality Control',
                 desc: 'Comprehensive manufacturing project focused on pulley design and production. Includes complete documentation of manufacturing processes and technical analysis.',
                 route: 'proj-pulley'
               },
               {
-                icon: '🚗',
-                title: 'Mustang Jeep Visor Support',
-                tech: 'Fabrication, Custom Parts, Automotive',
-                desc: 'Designed and fabricated a custom visor support system integrating Jeep visor components into a Mustang, demonstrating custom automotive fabrication skills.',
-                route: 'proj-mustang-visor'
+                title: 'Mustang Restoration',
+                tech: 'Fabrication, Bodywork, Paint, Restoration',
+                desc: 'Comprehensive restoration project involving custom fabrication, bodywork, mechanical restoration, and paint work.',
+                route: 'proj-mustang-restoration'
               },
               {
-                icon: '🤖',
+                title: 'Jeep Visor Support',
+                tech: 'Fabrication, Custom Parts, CAD Design',
+                desc: 'Designed and fabricated a custom visor support system incorporating Jeep visor components, demonstrating custom automotive fabrication skills.',
+                route: 'proj-jeep-visor'
+              },
+              {
                 title: 'FIRST Robotics Competition',
                 tech: 'Robotics, Team Collaboration, CAD Design',
                 desc: 'Active member of FIRST Robotics Team 7788, participating in robot design, build, programming, and competition strategy.',
@@ -140,17 +138,14 @@ const MEPortfolio = ({ setCurrentPage }) => {
                 onClick={() => setCurrentPage(p.route)}
                 className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 text-left"
               >
-                <div className="flex items-start mb-4">
-                  <div className="text-5xl mr-4 group-hover:scale-110 transition-transform duration-300">{p.icon}</div>
-                  <div className="flex-1">
-                    <h3 className="text-2xl font-bold mb-2 text-gray-900 group-hover:text-primary transition-colors">{p.title}</h3>
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      {p.tech.split(', ').map((t, i) => (
-                        <span key={i} className="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full border border-primary/20">
-                          {t}
-                        </span>
-                      ))}
-                    </div>
+                <div className="mb-4">
+                  <h3 className="text-2xl font-bold mb-2 text-gray-900 group-hover:text-primary transition-colors">{p.title}</h3>
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    {p.tech.split(', ').map((t, i) => (
+                      <span key={i} className="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full border border-primary/20">
+                        {t}
+                      </span>
+                    ))}
                   </div>
                 </div>
                 <p className="text-gray-700 leading-relaxed mb-6">{p.desc}</p>
@@ -205,20 +200,17 @@ const MEPortfolio = ({ setCurrentPage }) => {
         {activeSection === 'certs' && (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: '🧰', name: 'Apprentice Electrician License', meta: 'Expires May 10, 2026' },
-              { icon: '🏗️', name: 'NCCER Electrical Levels 1 and 2', meta: 'Construction training program' },
-              { icon: '🍽️', name: 'ServSafe', meta: 'Food Protection Manager Certification' },
-              { icon: '📘', name: 'Relevant Courses', meta: 'Engineering Graphics, Circuit Analysis, Fluid Mechanics, Manufacturing Processes, and Introductory Programming' },
-              { icon: '🤝', name: 'Clubs and Teams', meta: 'American Society of Mechanical Engineers (member), Formula SAE team, ASME project group, and FIRST Robotics (Team 7788)' },
-              { icon: '💻', name: 'Software', meta: 'MATLAB, AutoCAD, Creo, Inventor, Ansys, MSC Adams, and Fusion 360' },
+              { name: 'Apprentice Electrician License', meta: 'Expires May 10, 2026' },
+              { name: 'NCCER Electrical Levels 1 and 2', meta: 'Construction training program' },
+              { name: 'ServSafe', meta: 'Food Protection Manager Certification' },
+              { name: 'Relevant Courses', meta: 'Engineering Graphics, Circuit Analysis, Fluid Mechanics, Manufacturing Processes, and Introductory Programming' },
+              { name: 'Clubs and Teams', meta: 'American Society of Mechanical Engineers (member), Formula SAE team, ASME project group, and FIRST Robotics (Team 7788)' },
+              { name: 'Software', meta: 'MATLAB, AutoCAD, Creo, Inventor, Ansys, MSC Adams, and Fusion 360' },
             ].map((c, k) => (
               <div key={k} className="group bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="flex items-start">
-                  <div className="text-4xl mr-4 group-hover:scale-110 transition-transform duration-300">{c.icon}</div>
-                  <div className="flex-1">
-                    <h4 className="text-lg font-bold mb-2 text-gray-900 group-hover:text-primary transition-colors">{c.name}</h4>
-                    <p className="text-gray-600 text-sm leading-relaxed">{c.meta}</p>
-                  </div>
+                <div>
+                  <h4 className="text-lg font-bold mb-2 text-gray-900 group-hover:text-primary transition-colors">{c.name}</h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">{c.meta}</p>
                 </div>
               </div>
             ))}
