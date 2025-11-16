@@ -2,7 +2,7 @@ import React from 'react';
 import ThreeViewer from './ThreeViewer';
 import ExplodedAssembly from './ExplodedAssembly';
 
-const Models = () => {
+const Models = ({ setCurrentPage }) => {
   // Featured STL model - Bathroom Rack
   const featuredModel = {
     path: '/BathRoom Rack v6.stl',
@@ -32,16 +32,27 @@ const Models = () => {
 
         {/* Featured Model - Bathroom Rack */}
         <div className="mb-16">
-          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden hover:shadow-2xl transition-shadow duration-300">
             <div className="p-8 sm:p-12">
               <div className="mb-6">
                 <div className="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
                   Featured Design
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{featuredModel.title}</h2>
-                <p className="text-lg text-gray-700 leading-relaxed max-w-3xl">
+                <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mb-6">
                   {featuredModel.description}
                 </p>
+                {setCurrentPage && (
+                  <button
+                    onClick={() => setCurrentPage('proj-bathroom-rack')}
+                    className="group inline-flex items-center gap-2 bg-primary hover:bg-secondary text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-primary/30"
+                  >
+                    View Full Project
+                    <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                  </button>
+                )}
               </div>
               <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
                 <ThreeViewer 

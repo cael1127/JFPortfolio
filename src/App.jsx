@@ -10,6 +10,7 @@ import ChevelleProject from './components/projects/ChevelleProject';
 import BoatProject from './components/projects/BoatProject';
 import SlotMachineProject from './components/projects/SlotMachineProject';
 import TorquePlateProject from './components/projects/TorquePlateProject';
+import BathroomRackProject from './components/projects/BathroomRackProject';
 import AIInterviewSimulator from './components/AIInterviewSimulator';
 import RealTimeCollaboration from './components/RealTimeCollaboration';
 import AdvancedAnalytics from './components/AdvancedAnalytics';
@@ -105,6 +106,8 @@ function App() {
         return <SlotMachineProject />;
       case 'proj-torque':
         return <TorquePlateProject />;
+      case 'proj-bathroom-rack':
+        return <BathroomRackProject />;
       case 'ai-interview-simulator':
         return <AIInterviewSimulator setCurrentPage={navigateTo} />;
       case 'real-time-collaboration':
