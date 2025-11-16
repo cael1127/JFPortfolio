@@ -12,7 +12,7 @@ const Home = ({ setCurrentPage }) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-32 relative z-10 snap-section">
         <div className="text-center max-w-5xl mx-auto">
           <AnimatedCard delay={0} direction="down" className="mb-8">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-[1.1] tracking-tight">
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-[1.4] tracking-tight pb-2">
               Justis Findley
             </h1>
           </AnimatedCard>

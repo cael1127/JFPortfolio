@@ -20,16 +20,16 @@ const BathroomRackProject = () => {
 
         {/* Header */}
         <div className="mb-10">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-3 break-words">
-            Bathroom Rack Design
-          </h1>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-3 pb-2 break-words leading-[1.4]">
+                Bathroom Rack Design
+              </h1>
           <p className="text-xl text-gray-600 font-medium break-words">CAD Design Project</p>
         </div>
 
         {/* Overview and Skills */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           <div className="md:col-span-2 bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100">
-            <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Overview</h2>
+            <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">Overview</h2>
             <p className="text-gray-700 leading-relaxed text-lg mb-4 break-words">
               A functional and elegant bathroom rack design featuring modern aesthetics and practical storage solutions. 
               This design focuses on maximizing space efficiency while maintaining a clean, contemporary look.
@@ -42,7 +42,7 @@ const BathroomRackProject = () => {
             </ul>
           </div>
           <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100">
-            <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Skills & Tools</h2>
+            <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">Skills & Tools</h2>
             <div className="flex flex-wrap gap-3 pb-2">
               {['CAD Design', '3D Modeling', 'Product Design', 'SolidWorks', 'Fusion 360', 'STL Export'].map((t) => (
                 <span key={t} className="bg-primary/10 text-primary font-semibold border border-primary/20 text-sm px-4 py-2 rounded-full break-words">{t}</span>
@@ -53,7 +53,7 @@ const BathroomRackProject = () => {
 
         {/* 3D Model Viewer with Implode Animation */}
         <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100 mb-12">
-          <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">3D Model</h2>
+          <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">3D Model</h2>
           <p className="text-gray-600 mb-6 leading-relaxed break-words">
             Watch the parts implode together to form the complete assembly. Rotate, zoom, and explore the detailed design.
           </p>
@@ -110,7 +110,7 @@ const BathroomRackProject = () => {
 
         {/* Documents Section */}
         <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100 mb-12">
-          <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Project Documents</h2>
+          <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">Project Documents</h2>
           <p className="text-gray-600 mb-6 leading-relaxed break-words">
             Download the complete project documentation including design presentation and detailed report.
           </p>
@@ -175,7 +175,7 @@ const BathroomRackProject = () => {
 
         {/* Design Details */}
         <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100 mb-12">
-          <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Design Details</h2>
+          <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">Design Details</h2>
           <div className="grid md:grid-cols-2 gap-6 pb-2">
             <div>
               <h3 className="text-lg font-semibold mb-3 text-gray-900 break-words">Key Features</h3>

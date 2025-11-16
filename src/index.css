@@ -10,6 +10,21 @@ html, body {
   line-height: 1.6;
 }
 
+/* Prevent text cutoff in headings */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.3;
+  padding-bottom: 0.25em;
+  overflow: visible;
+  word-wrap: break-word;
+}
+
+/* Fix gradient text clipping - ensure descenders aren't cut off */
+[class*="bg-clip-text"] {
+  line-height: 1.4 !important;
+  padding-bottom: 0.4em !important;
+  overflow: visible !important;
+}
+
 /* Enhanced scrollbar styling */
 ::-webkit-scrollbar {
   width: 8px;

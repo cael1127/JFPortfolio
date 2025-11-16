@@ -8,7 +8,7 @@ const MEPortfolio = ({ setCurrentPage }) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         {/* Header */}
         <div className="mb-12">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-6 text-center md:text-left">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-6 pb-2 text-center md:text-left leading-[1.4]">
             Mechanical Engineering Portfolio
           </h1>
           <div className="flex flex-wrap gap-3 justify-center md:justify-start">
@@ -40,14 +40,14 @@ const MEPortfolio = ({ setCurrentPage }) => {
         {/* Objective & Education */}
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-            <h2 className="text-2xl font-bold mb-4 text-gray-900">Objective</h2>
+            <h2 className="text-2xl font-bold mb-4 pb-1 text-gray-900 leading-[1.3]">Objective</h2>
             <p className="text-gray-700 leading-relaxed">
               Mechanical engineering student looking for an internship in robotics, product design, or manufacturing.
               I want to learn from a hands-on team and help build useful, reliable products.
             </p>
           </div>
           <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
-            <h2 className="text-2xl font-bold mb-4 text-gray-900">Education</h2>
+            <h2 className="text-2xl font-bold mb-4 pb-1 text-gray-900 leading-[1.3]">Education</h2>
             <div className="text-gray-900 font-semibold text-lg mb-2">Texas A&M University–Corpus Christi</div>
             <div className="text-gray-700 mb-2">Bachelor of Science in Mechanical Engineering</div>
             <div className="text-gray-600 text-sm">Expected May 2027</div>
@@ -139,7 +139,7 @@ const MEPortfolio = ({ setCurrentPage }) => {
                 className="group bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100 text-left"
               >
                 <div className="mb-4">
-                  <h3 className="text-2xl font-bold mb-2 text-gray-900 group-hover:text-primary transition-colors">{p.title}</h3>
+                    <h3 className="text-2xl font-bold mb-2 pb-1 text-gray-900 group-hover:text-primary transition-colors leading-[1.3]">{p.title}</h3>
                   <div className="flex flex-wrap gap-2 mb-3">
                     {p.tech.split(', ').map((t, i) => (
                       <span key={i} className="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full border border-primary/20">
@@ -184,7 +184,7 @@ const MEPortfolio = ({ setCurrentPage }) => {
             ].map((exp, i) => (
               <div key={i} className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-shadow duration-300">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2 sm:mb-0">{exp.role} <span className="text-primary">•</span> {exp.org}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2 sm:mb-0 pb-1 leading-[1.3]">{exp.role} <span className="text-primary">•</span> {exp.org}</h3>
                   <span className="text-gray-600 font-medium">{exp.period}</span>
                 </div>
                 <ul className="list-disc list-inside text-gray-700 space-y-2 ml-2">
@@ -209,7 +209,7 @@ const MEPortfolio = ({ setCurrentPage }) => {
             ].map((c, k) => (
               <div key={k} className="group bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div>
-                  <h4 className="text-lg font-bold mb-2 text-gray-900 group-hover:text-primary transition-colors">{c.name}</h4>
+                    <h4 className="text-lg font-bold mb-2 pb-1 text-gray-900 group-hover:text-primary transition-colors leading-[1.3]">{c.name}</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">{c.meta}</p>
                 </div>
               </div>

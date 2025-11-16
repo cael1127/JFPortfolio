@@ -22,7 +22,7 @@ const FirstRoboticsProject = () => {
 
         {/* Header */}
         <div className="mb-10">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-3 break-words">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-3 pb-2 break-words leading-[1.4]">
             FIRST Robotics Competition
           </h1>
           <p className="text-xl text-gray-600 font-medium break-words">Team 7788</p>
@@ -31,7 +31,7 @@ const FirstRoboticsProject = () => {
         {/* Overview and Skills */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           <div className="md:col-span-2 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-            <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Overview</h2>
+            <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">Overview</h2>
             <p className="text-gray-700 leading-relaxed text-lg mb-4 break-words">
               Active member of FIRST Robotics Competition Team 7788, participating in the design, build, and programming 
               of competitive robots. FIRST Robotics combines engineering, teamwork, and problem-solving in an exciting 
@@ -45,7 +45,7 @@ const FirstRoboticsProject = () => {
             </ul>
           </div>
           <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-            <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Skills & Tools</h2>
+            <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">Skills & Tools</h2>
             <div className="flex flex-wrap gap-3">
               {['Robotics', 'Team Collaboration', 'CAD Design', 'Programming', 'Mechanical Design', 'Competition'].map((t) => (
                 <span key={t} className="bg-primary/10 text-primary font-semibold border border-primary/20 text-sm px-4 py-2 rounded-full break-words">{t}</span>
@@ -57,7 +57,7 @@ const FirstRoboticsProject = () => {
         {/* Videos Section */}
         {videos.length > 0 && (
           <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100 mb-12">
-            <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Competition Videos</h2>
+            <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">Competition Videos</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-2">
               {videos.map((video, idx) => (
                 <div key={idx} className="relative group overflow-hidden rounded-xl">
@@ -80,7 +80,7 @@ const FirstRoboticsProject = () => {
 
         {/* About FIRST Robotics */}
         <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100 mb-12">
-          <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">About FIRST Robotics</h2>
+          <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">About FIRST Robotics</h2>
           <div className="space-y-4 text-gray-700 leading-relaxed text-lg pb-2">
             <p className="break-words">
               FIRST (For Inspiration and Recognition of Science and Technology) Robotics Competition is an international 
@@ -97,7 +97,7 @@ const FirstRoboticsProject = () => {
 
         {/* Project Details */}
         <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100 mb-12">
-          <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Team Contributions</h2>
+          <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">Team Contributions</h2>
           <div className="grid md:grid-cols-2 gap-6 pb-2">
             <div>
               <h3 className="text-lg font-semibold mb-3 text-gray-900 break-words">Design & Engineering</h3>

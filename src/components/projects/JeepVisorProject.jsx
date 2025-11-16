@@ -20,7 +20,7 @@ const JeepVisorProject = () => {
 
         {/* Header */}
         <div className="mb-10">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-3 break-words">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-3 pb-2 break-words leading-[1.4]">
             Jeep Visor Support
           </h1>
           <p className="text-xl text-gray-600 font-medium break-words">Custom Automotive Fabrication Project</p>
@@ -29,7 +29,7 @@ const JeepVisorProject = () => {
         {/* Overview and Skills */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           <div className="md:col-span-2 bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100">
-            <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Overview</h2>
+            <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">Overview</h2>
             <p className="text-gray-700 leading-relaxed text-lg mb-4 break-words">
               Designed and fabricated a custom visor support system incorporating Jeep visor components. 
               This project demonstrates custom automotive fabrication skills, problem-solving, and attention to detail in 
@@ -43,7 +43,7 @@ const JeepVisorProject = () => {
             </ul>
           </div>
           <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100">
-            <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Skills & Tools</h2>
+            <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">Skills & Tools</h2>
             <div className="flex flex-wrap gap-3 pb-2">
               {['Fabrication', 'Welding', 'Custom Parts', 'CAD Design', 'Measurement', 'Automotive'].map((t) => (
                 <span key={t} className="bg-primary/10 text-primary font-semibold border border-primary/20 text-sm px-4 py-2 rounded-full break-words">{t}</span>
@@ -54,7 +54,7 @@ const JeepVisorProject = () => {
 
         {/* 3D Model Section */}
         <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100 mb-12">
-          <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">3D Model</h2>
+          <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">3D Model</h2>
           <p className="text-gray-600 mb-6 leading-relaxed break-words">
             Interactive 3D model of the Jeep visor support design. Rotate, zoom, and explore the detailed design.
           </p>
@@ -78,7 +78,7 @@ const JeepVisorProject = () => {
 
         {/* Project Details */}
         <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100 mb-12">
-          <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Project Details</h2>
+          <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">Project Details</h2>
           <div className="grid md:grid-cols-2 gap-6 pb-2">
             <div>
               <h3 className="text-lg font-semibold mb-3 text-gray-900 break-words">Design & Fabrication</h3>

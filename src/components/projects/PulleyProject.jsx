@@ -88,7 +88,7 @@ const PulleyProject = () => {
 
         {/* Header */}
         <div className="mb-10">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-3 break-words">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-3 pb-2 break-words leading-[1.4]">
             Pulley Manufacturing Project
           </h1>
           <p className="text-xl text-gray-600 font-medium break-words">Manufacturing Lab 2 - Design Iterations</p>
@@ -97,7 +97,7 @@ const PulleyProject = () => {
         {/* Overview and Skills */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           <div className="md:col-span-2 bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100">
-            <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Overview</h2>
+            <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">Overview</h2>
             <p className="text-gray-700 leading-relaxed text-lg mb-4 break-words">
               A comprehensive manufacturing project focused on pulley design and production. This project demonstrates 
               iterative design improvement, problem-solving, and hands-on experience with manufacturing processes, quality control, 
@@ -111,7 +111,7 @@ const PulleyProject = () => {
             </ul>
           </div>
           <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100">
-            <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Skills & Tools</h2>
+            <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">Skills & Tools</h2>
             <div className="flex flex-wrap gap-3 pb-2">
               {['Manufacturing', 'Machining', 'Quality Control', 'CAD', 'Iterative Design', 'Problem Solving'].map((t) => (
                 <span key={t} className="bg-primary/10 text-primary font-semibold border border-primary/20 text-sm px-4 py-2 rounded-full break-words">{t}</span>
@@ -122,7 +122,7 @@ const PulleyProject = () => {
 
         {/* Version Selection */}
         <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100 mb-12">
-          <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Design Iterations</h2>
+          <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">Design Iterations</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             {versions.map((version) => (
               <button
@@ -213,7 +213,7 @@ const PulleyProject = () => {
 
         {/* Documents Section */}
         <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100 mb-12">
-          <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Project Documents</h2>
+          <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">Project Documents</h2>
           <p className="text-gray-600 mb-6 leading-relaxed break-words">
             Download the complete project documentation including presentation and detailed manufacturing report.
           </p>
