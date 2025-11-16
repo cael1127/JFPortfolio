@@ -9,7 +9,7 @@
        Only the base URL is included in the sitemap as hash fragments (#) are not
        allowed in sitemaps. All routes are handled client-side via JavaScript. -->
   <url>
-    <loc>https://justisfindley.com/</loc>
+    <loc>https://jfresume.netlify.app/</loc>
     <lastmod>2025-11-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>

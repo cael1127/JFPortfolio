@@ -8,7 +8,7 @@ Allow: /
 # Disallow: /private/
 
 # Sitemap location
-Sitemap: https://justisfindley.com/sitemap.xml
+Sitemap: https://jfresume.netlify.app/sitemap.xml
 
 # Crawl-delay (optional, adjust as needed)
 # Crawl-delay: 1
