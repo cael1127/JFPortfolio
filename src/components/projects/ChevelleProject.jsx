@@ -1,6 +1,23 @@
 import React from 'react';
 
 const ChevelleProject = () => {
+  // Organize Chevelle images and videos
+  const chevImages = [];
+  const chevVideos = [];
+
+  // Add CHEV images (1-22) - handle mixed case extensions
+  const chevExtMap = {
+    1: 'JPG', 2: 'JPG', 3: 'JPG', 4: 'JPG', 11: 'JPG', 12: 'JPG', 13: 'JPG'
+  };
+  for (let i = 1; i <= 22; i++) {
+    const ext = chevExtMap[i] || 'jpg';
+    chevImages.push(`/CHEV${i}.${ext}`);
+  }
+
+  // Add CHEV videos
+  chevVideos.push('/CHEV9.MOV');
+  chevVideos.push('/CHEV10.MOV');
+
   return (
     <div className="min-h-screen text-gray-900" style={{background: 'transparent'}}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
@@ -30,36 +47,52 @@ const ChevelleProject = () => {
         </div>
         <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
           <h2 className="text-2xl font-bold mb-8 text-gray-900">Gallery</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Car Photos */}
-            {[1, 2, 3, 4, 5].map((num) => (
-              <div key={num} className="relative group overflow-hidden rounded-xl">
-                <img 
-                  src={`/car0${num}.JPEG`} 
-                  alt={`Chevelle restoration progress ${num}`}
-                  className="w-full h-64 object-cover rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-110 bg-gray-100"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-end justify-center pb-4">
-                  <span className="text-white text-sm font-semibold">
-                    Progress Photo {num}
-                  </span>
+          
+          {/* Videos Section */}
+          {chevVideos.length > 0 && (
+            <div className="mb-8">
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">Restoration Videos</h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {chevVideos.map((video, idx) => (
+                  <div key={idx} className="relative group overflow-hidden rounded-xl">
+                    <video 
+                      src={video} 
+                      controls
+                      className="w-full h-80 object-contain rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 bg-gray-100"
+                      poster={chevImages[0]}
+                    >
+                      Your browser does not support the video tag.
+                    </video>
+                    <div className="absolute top-4 left-4 bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-lg">
+                      Video {idx + 1}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Images Grid */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-gray-900">Restoration Progress Photos</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {chevImages.map((img, idx) => (
+                <div key={idx} className="relative group overflow-hidden rounded-xl bg-gray-100 aspect-square">
+                  <img 
+                    src={img} 
+                    alt={`Chevelle restoration progress ${idx + 1}`}
+                    className="w-full h-full object-cover rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-110"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-end justify-center pb-2">
+                    <span className="text-white text-xs font-semibold">
+                      Photo {idx + 1}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
-            
-            {/* Car Video */}
-            <div className="relative group md:col-span-2 lg:col-span-3 overflow-hidden rounded-xl">
-              <video 
-                src="/carvid.M4V" 
-                controls
-                className="w-full h-80 md:h-96 object-contain rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 bg-gray-100"
-                poster="/car01.JPEG"
-              >
-                Your browser does not support the video tag.
-              </video>
-              <div className="absolute top-4 left-4 bg-primary text-white px-4 py-2 rounded-lg text-sm font-semibold shadow-lg">
-                Restoration Video
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -69,5 +102,3 @@ const ChevelleProject = () => {
 };
 
 export default ChevelleProject;
-
-

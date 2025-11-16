@@ -34,15 +34,6 @@ const MEPortfolio = ({ setCurrentPage }) => {
               </svg>
               LinkedIn
             </a>
-            <button
-              onClick={() => setCurrentPage('models')}
-              className="group bg-white hover:bg-gray-50 text-primary border-2 border-primary px-6 py-3 rounded-xl transition-all duration-300 hover:shadow-lg font-semibold flex items-center gap-2"
-            >
-              Interactive 3D Models
-              <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </button>
           </div>
         </div>
 
@@ -114,6 +105,34 @@ const MEPortfolio = ({ setCurrentPage }) => {
                 tech: 'Team Manufacturing, Report Writing',
                 desc: 'Worked with a team to manufacture a torque plate and authored documentation on the full process.',
                 route: 'proj-torque'
+              },
+              {
+                icon: '🚿',
+                title: 'Bathroom Rack Design',
+                tech: 'CAD Design, 3D Modeling, Product Design',
+                desc: 'A functional and elegant bathroom rack design featuring modern aesthetics and practical storage solutions. Includes interactive 3D model with implode animation.',
+                route: 'proj-bathroom-rack'
+              },
+              {
+                icon: '⚙️',
+                title: 'Pulley Manufacturing Project',
+                tech: 'Manufacturing, Machining, Quality Control',
+                desc: 'Comprehensive manufacturing project focused on pulley design and production. Includes complete documentation of manufacturing processes and technical analysis.',
+                route: 'proj-pulley'
+              },
+              {
+                icon: '🚗',
+                title: 'Mustang Jeep Visor Support',
+                tech: 'Fabrication, Custom Parts, Automotive',
+                desc: 'Designed and fabricated a custom visor support system integrating Jeep visor components into a Mustang, demonstrating custom automotive fabrication skills.',
+                route: 'proj-mustang-visor'
+              },
+              {
+                icon: '🤖',
+                title: 'FIRST Robotics Competition',
+                tech: 'Robotics, Team Collaboration, CAD Design',
+                desc: 'Active member of FIRST Robotics Team 7788, participating in robot design, build, programming, and competition strategy.',
+                route: 'proj-first-robotics'
               }
             ].map((p, idx) => (
               <button

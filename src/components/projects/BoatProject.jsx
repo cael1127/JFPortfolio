@@ -30,26 +30,20 @@ const BoatProject = () => {
         </div>
         <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
           <h2 className="text-2xl font-bold mb-8 text-gray-900">Gallery</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Placeholder for boat photos */}
-            <div className="relative group border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center h-80 bg-gray-50 hover:border-primary/50 transition-colors duration-300">
-              <div className="text-center text-gray-500">
-                <svg className="mx-auto h-16 w-16 text-gray-400 group-hover:text-primary transition-colors" stroke="currentColor" fill="none" viewBox="0 0 48 48">
-                  <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                <p className="mt-4 text-base font-semibold">Boat restoration photos</p>
-                <p className="text-sm text-gray-400 mt-2">Add boat-*.jpg files to public/ folder</p>
-              </div>
-            </div>
-            
-            {/* Placeholder for additional photos */}
-            <div className="relative group border-2 border-dashed border-gray-300 rounded-xl flex items-center justify-center h-80 bg-gray-50 hover:border-primary/50 transition-colors duration-300">
-              <div className="text-center text-gray-500">
-                <svg className="mx-auto h-16 w-16 text-gray-400 group-hover:text-primary transition-colors" stroke="currentColor" fill="none" viewBox="0 0 48 48">
-                  <path d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-                <p className="mt-4 text-base font-semibold">Additional photos</p>
-                <p className="text-sm text-gray-400 mt-2">Add more boat-*.jpg files</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="relative group overflow-hidden rounded-xl bg-gray-100 aspect-square">
+              <img 
+                src="/BOAT1.jpg" 
+                alt="Boat restoration project"
+                className="w-full h-full object-cover rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-110"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-end justify-center pb-4">
+                <span className="text-white text-sm font-semibold">
+                  Boat Restoration
+                </span>
               </div>
             </div>
           </div>
@@ -60,5 +54,3 @@ const BoatProject = () => {
 };
 
 export default BoatProject;
-
-

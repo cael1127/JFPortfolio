@@ -123,7 +123,7 @@ const Home = ({ setCurrentPage }) => {
             <div className="relative z-10">
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 inline-block">🛠️</div>
               <h3 className="text-2xl font-bold mb-3 text-white">Design Projects</h3>
-              <p className="text-white/90 text-base leading-relaxed">Fixtures, enclosures, frames, and more. Explore detailed project showcases with CAD designs and manufacturing insights.</p>
+              <p className="text-white/90 text-base leading-relaxed">Fixtures, enclosures, frames, and more. Explore detailed project showcases with CAD designs, 3D models, and manufacturing insights.</p>
               <div className="mt-6 flex items-center text-white font-semibold group-hover:translate-x-2 transition-transform duration-300">
                 View Projects
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -133,16 +133,16 @@ const Home = ({ setCurrentPage }) => {
             </div>
           </button>
           <button
-            onClick={() => setCurrentPage('models')}
+            onClick={() => setCurrentPage('portfolio')}
             className="group relative bg-gradient-to-br from-secondary via-accent to-primary p-8 rounded-2xl transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-secondary/30 text-left overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative z-10">
               <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300 inline-block">🧩</div>
-              <h3 className="text-2xl font-bold mb-3 text-white">Interactive 3D Models</h3>
-              <p className="text-white/90 text-base leading-relaxed">Rotate, zoom, and explore STL models directly in your browser. Experience detailed mechanical assemblies.</p>
+              <h3 className="text-2xl font-bold mb-3 text-white">3D Models & CAD</h3>
+              <p className="text-white/90 text-base leading-relaxed">Interactive 3D models with implode animations, CAD designs, and technical documentation. All integrated into project pages.</p>
               <div className="mt-6 flex items-center text-white font-semibold group-hover:translate-x-2 transition-transform duration-300">
-                Explore Models
+                View Portfolio
                 <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>

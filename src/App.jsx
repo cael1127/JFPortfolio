@@ -11,6 +11,9 @@ import BoatProject from './components/projects/BoatProject';
 import SlotMachineProject from './components/projects/SlotMachineProject';
 import TorquePlateProject from './components/projects/TorquePlateProject';
 import BathroomRackProject from './components/projects/BathroomRackProject';
+import PulleyProject from './components/projects/PulleyProject';
+import MustangJeepVisorProject from './components/projects/MustangJeepVisorProject';
+import FirstRoboticsProject from './components/projects/FirstRoboticsProject';
 import AIInterviewSimulator from './components/AIInterviewSimulator';
 import RealTimeCollaboration from './components/RealTimeCollaboration';
 import AdvancedAnalytics from './components/AdvancedAnalytics';
@@ -108,6 +111,12 @@ function App() {
         return <TorquePlateProject />;
       case 'proj-bathroom-rack':
         return <BathroomRackProject />;
+      case 'proj-pulley':
+        return <PulleyProject />;
+      case 'proj-mustang-visor':
+        return <MustangJeepVisorProject />;
+      case 'proj-first-robotics':
+        return <FirstRoboticsProject />;
       case 'ai-interview-simulator':
         return <AIInterviewSimulator setCurrentPage={navigateTo} />;
       case 'real-time-collaboration':
@@ -299,7 +308,6 @@ function App() {
             {[
               { id: 'home', label: 'Home' },
               { id: 'portfolio', label: 'Portfolio' },
-              { id: 'models', label: '3D Models' },
               { id: 'resume', label: 'Resume' },
               { id: 'contact', label: 'Contact' },
             ].map((item) => (

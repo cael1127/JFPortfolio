@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import AnimatedSTLModel from '../AnimatedSTLModel';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stage } from '@react-three/drei';
@@ -9,13 +9,13 @@ const BathroomRackProject = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
         {/* Back Button */}
         <button
-          onClick={() => window.location.hash = '#/models'}
+          onClick={() => window.location.hash = '#/portfolio'}
           className="mb-6 group inline-flex items-center gap-2 text-primary hover:text-secondary font-semibold transition-colors"
         >
           <svg className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
-          Back to 3D Models
+          Back to Portfolio
         </button>
 
         {/* Header */}
@@ -62,19 +62,49 @@ const BathroomRackProject = () => {
               <Canvas shadows dpr={[1, 2]} camera={{ position: [2.5, 2.5, 2.5], fov: 50 }}>
                 <ambientLight intensity={0.6} />
                 <directionalLight position={[5, 5, 5]} intensity={0.8} castShadow />
-                <Stage preset="rembrandt" intensity={1} environment="city">
-                  <AnimatedSTLModel 
-                    modelPath="/BathRoom Rack v6.stl"
-                    color="#006f9f"
-                    scale={1}
-                    animationDuration={2.0}
-                    separationDistance={1.2}
-                    numParts={8}
-                  />
-                </Stage>
+                <Suspense fallback={null}>
+                  <Stage preset="rembrandt" intensity={1} environment="city">
+                    <AnimatedSTLModel 
+                      parts={null}
+                      // To use separate parts, uncomment and update the parts array below:
+                      // parts={[
+                      //   {
+                      //     path: '/BathroomRack-Part1.stl',
+                      //     color: '#006f9f',
+                      //     finalPosition: [0, 0, 0],
+                      //     initialOffset: [1.5, 0, 0], // [x, y, z] offset from final position
+                      //     animationDelay: 0
+                      //   },
+                      //   {
+                      //     path: '/BathroomRack-Part2.stl',
+                      //     color: '#2ca8bb',
+                      //     finalPosition: [0, 0, 0],
+                      //     initialOffset: [-1.5, 0, 0],
+                      //     animationDelay: 0.1
+                      //   },
+                      //   // Add more parts as needed...
+                      // ]}
+                      // Fallback: single model mode (current behavior)
+                      modelPath="/BathRoom Rack v6.stl"
+                      color="#006f9f"
+                      scale={1}
+                      animationDuration={2.0}
+                      separationDistance={1.2}
+                      numParts={8}
+                    />
+                  </Stage>
+                </Suspense>
                 <OrbitControls enableDamping makeDefault />
               </Canvas>
             </div>
+          </div>
+          <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+            <p className="text-sm text-blue-800">
+              <strong>Note:</strong> To use separate parts animation, export each component of the bathroom rack as a separate STL file 
+              (e.g., <code className="bg-blue-100 px-1 rounded">BathroomRack-Part1.stl</code>, <code className="bg-blue-100 px-1 rounded">BathroomRack-Part2.stl</code>, etc.) 
+              and update the <code className="bg-blue-100 px-1 rounded">parts</code> array in <code className="bg-blue-100 px-1 rounded">BathroomRackProject.jsx</code>. 
+              Each part will animate independently from its separated position to the final assembly position.
+            </p>
           </div>
         </div>
 

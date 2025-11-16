@@ -1,6 +1,14 @@
 import React from 'react';
 
 const SlotMachineProject = () => {
+  const slotImages = [
+    '/SLOT1.jpg',
+    '/SLOT2.jpg',
+    '/SLOT3.jpg',
+    '/SLOT4.jpg',
+    '/slotpic.JPEG'
+  ];
+
   return (
     <div className="min-h-screen text-gray-900" style={{background: 'transparent'}}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
@@ -30,27 +38,15 @@ const SlotMachineProject = () => {
         </div>
         <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
           <h2 className="text-2xl font-bold mb-8 text-gray-900">Gallery</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Slot Machine Photo */}
-            <div className="relative group overflow-hidden rounded-xl">
-              <img 
-                src="/slotpic.JPEG" 
-                alt="Slot machine restoration project"
-                className="w-full h-80 object-cover rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-110 bg-gray-100"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-end justify-center pb-4">
-                <span className="text-white text-sm font-semibold">
-                  Slot Machine Restoration
-                </span>
-              </div>
-            </div>
-            
-            {/* Slot Machine Video */}
+          
+          {/* Video Section */}
+          <div className="mb-8">
+            <h3 className="text-xl font-semibold mb-4 text-gray-900">Restoration Video</h3>
             <div className="relative group overflow-hidden rounded-xl">
               <video 
                 src="/slotvid.MP4" 
                 controls
-                className="w-full h-80 object-contain rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 bg-gray-100"
+                className="w-full h-80 md:h-96 object-contain rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 bg-gray-100"
                 poster="/slotpic.JPEG"
               >
                 Your browser does not support the video tag.
@@ -60,6 +56,30 @@ const SlotMachineProject = () => {
               </div>
             </div>
           </div>
+
+          {/* Images Grid */}
+          <div>
+            <h3 className="text-xl font-semibold mb-4 text-gray-900">Restoration Photos</h3>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+              {slotImages.map((img, idx) => (
+                <div key={idx} className="relative group overflow-hidden rounded-xl bg-gray-100 aspect-square">
+                  <img 
+                    src={img} 
+                    alt={`Slot machine restoration ${idx + 1}`}
+                    className="w-full h-full object-cover rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:scale-110"
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-end justify-center pb-2">
+                    <span className="text-white text-xs font-semibold">
+                      Photo {idx + 1}
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -67,5 +87,3 @@ const SlotMachineProject = () => {
 };
 
 export default SlotMachineProject;
-
-

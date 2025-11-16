@@ -154,6 +154,47 @@ netlify deploy --build --prod
 2. Place STL files in the `public/` directory
 3. Update the `stlModels` array in `src/components/Models.jsx` with your model paths and metadata
 
+### Using Separate Parts for Animation
+To create an "implode" animation with separate parts (instead of duplicating the whole model):
+
+1. **Export Separate STL Files**: In your CAD software (SolidWorks, Fusion 360, etc.), export each component as a separate STL file:
+   - Example: `BathroomRack-Part1.stl`, `BathroomRack-Part2.stl`, etc.
+   - Place all part files in the `public/` directory
+
+2. **Update the Project Component**: In your project component (e.g., `BathroomRackProject.jsx`), update the `AnimatedSTLModel` component:
+   ```jsx
+   <AnimatedSTLModel 
+     parts={[
+       {
+         path: '/BathroomRack-Part1.stl',
+         color: '#006f9f',
+         finalPosition: [0, 0, 0],  // Final assembly position
+         initialOffset: [1.5, 0, 0], // [x, y, z] starting offset
+         animationDelay: 0
+       },
+       {
+         path: '/BathroomRack-Part2.stl',
+         color: '#2ca8bb',
+         finalPosition: [0, 0, 0],
+         initialOffset: [-1.5, 0, 0],
+         animationDelay: 0.1  // Stagger animation start
+       },
+       // Add more parts...
+     ]}
+     animationDuration={2.0}
+   />
+   ```
+
+3. **Part Configuration Options**:
+   - `path`: Path to the STL file (relative to `public/`)
+   - `color`: Hex color code for the part
+   - `finalPosition`: `[x, y, z]` array - where the part ends up in the assembly
+   - `initialOffset`: `[x, y, z]` array - starting position offset from final position
+   - `animationDelay`: Delay in seconds before this part starts animating
+   - `animationDuration`: How long the animation takes (in seconds)
+
+**Note**: If `parts` is `null` or empty, the component falls back to the single-model mode (duplicating the whole model).
+
 ### Customizing Styles
 - Tailwind tokens in `tailwind.config.js`
 - Component styles via Tailwind classes
