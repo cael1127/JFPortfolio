@@ -88,41 +88,41 @@ const PulleyProject = () => {
 
         {/* Header */}
         <div className="mb-10">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-3">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-3 break-words">
             Pulley Manufacturing Project
           </h1>
-          <p className="text-xl text-gray-600 font-medium">Manufacturing Lab 2 - Design Iterations</p>
+          <p className="text-xl text-gray-600 font-medium break-words">Manufacturing Lab 2 - Design Iterations</p>
         </div>
 
         {/* Overview and Skills */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
-          <div className="md:col-span-2 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-            <h2 className="text-2xl font-bold mb-6 text-gray-900">Overview</h2>
-            <p className="text-gray-700 leading-relaxed text-lg mb-4">
+          <div className="md:col-span-2 bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100">
+            <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Overview</h2>
+            <p className="text-gray-700 leading-relaxed text-lg mb-4 break-words">
               A comprehensive manufacturing project focused on pulley design and production. This project demonstrates 
               iterative design improvement, problem-solving, and hands-on experience with manufacturing processes, quality control, 
               and technical documentation.
             </p>
-            <ul className="list-disc list-inside text-gray-700 space-y-2 leading-relaxed text-lg">
-              <li>Iterative design process through multiple versions</li>
-              <li>Problem identification and solution development</li>
-              <li>Applied manufacturing principles and quality control measures</li>
-              <li>Documented complete design evolution and manufacturing process</li>
+            <ul className="list-disc list-inside text-gray-700 space-y-2 leading-relaxed text-lg pl-2 pb-2">
+              <li className="break-words">Iterative design process through multiple versions</li>
+              <li className="break-words">Problem identification and solution development</li>
+              <li className="break-words">Applied manufacturing principles and quality control measures</li>
+              <li className="break-words">Documented complete design evolution and manufacturing process</li>
             </ul>
           </div>
-          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-            <h2 className="text-2xl font-bold mb-6 text-gray-900">Skills & Tools</h2>
-            <div className="flex flex-wrap gap-3">
+          <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100">
+            <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Skills & Tools</h2>
+            <div className="flex flex-wrap gap-3 pb-2">
               {['Manufacturing', 'Machining', 'Quality Control', 'CAD', 'Iterative Design', 'Problem Solving'].map((t) => (
-                <span key={t} className="bg-primary/10 text-primary font-semibold border border-primary/20 text-sm px-4 py-2 rounded-full">{t}</span>
+                <span key={t} className="bg-primary/10 text-primary font-semibold border border-primary/20 text-sm px-4 py-2 rounded-full break-words">{t}</span>
               ))}
             </div>
           </div>
         </div>
 
         {/* Version Selection */}
-        <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 mb-12">
-          <h2 className="text-2xl font-bold mb-6 text-gray-900">Design Iterations</h2>
+        <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100 mb-12">
+          <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Design Iterations</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
             {versions.map((version) => (
               <button
@@ -135,12 +135,12 @@ const PulleyProject = () => {
                 }`}
               >
                 <div className="text-center">
-                  <div className={`text-lg font-bold mb-1 ${
+                  <div className={`text-lg font-bold mb-1 break-words ${
                     selectedVersion === version.id ? 'text-primary' : 'text-gray-700'
                   }`}>
                     {version.name}
                   </div>
-                  <div className="text-sm text-gray-600">{version.description}</div>
+                  <div className="text-sm text-gray-600 break-words">{version.description}</div>
                 </div>
               </button>
             ))}
@@ -170,39 +170,39 @@ const PulleyProject = () => {
             </div>
 
             {/* Version Details */}
-            <div className="space-y-6">
+            <div className="space-y-6 pb-2">
               <div>
-                <h3 className="text-xl font-bold mb-3 text-gray-900">Description</h3>
-                <p className="text-gray-700 leading-relaxed">{currentVersion.description}</p>
+                <h3 className="text-xl font-bold mb-3 text-gray-900 break-words">Description</h3>
+                <p className="text-gray-700 leading-relaxed break-words pb-2">{currentVersion.description}</p>
               </div>
 
               {currentVersion.problems.length > 0 && (
-                <div className="bg-red-50 border border-red-200 rounded-xl p-4">
-                  <h3 className="text-lg font-bold mb-3 text-red-900 flex items-center gap-2">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <div className="bg-red-50 border border-red-200 rounded-xl p-4 pb-4">
+                  <h3 className="text-lg font-bold mb-3 text-red-900 flex items-center gap-2 break-words">
+                    <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                     </svg>
                     Problems Identified
                   </h3>
-                  <ul className="list-disc list-inside text-red-800 space-y-1">
+                  <ul className="list-disc list-inside text-red-800 space-y-1 pl-2">
                     {currentVersion.problems.map((problem, idx) => (
-                      <li key={idx}>{problem}</li>
+                      <li key={idx} className="break-words pb-1">{problem}</li>
                     ))}
                   </ul>
                 </div>
               )}
 
               {currentVersion.improvements.length > 0 && (
-                <div className="bg-green-50 border border-green-200 rounded-xl p-4">
-                  <h3 className="text-lg font-bold mb-3 text-green-900 flex items-center gap-2">
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <div className="bg-green-50 border border-green-200 rounded-xl p-4 pb-4">
+                  <h3 className="text-lg font-bold mb-3 text-green-900 flex items-center gap-2 break-words">
+                    <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                     </svg>
                     Improvements Made
                   </h3>
-                  <ul className="list-disc list-inside text-green-800 space-y-1">
+                  <ul className="list-disc list-inside text-green-800 space-y-1 pl-2">
                     {currentVersion.improvements.map((improvement, idx) => (
-                      <li key={idx}>{improvement}</li>
+                      <li key={idx} className="break-words pb-1">{improvement}</li>
                     ))}
                   </ul>
                 </div>
@@ -212,9 +212,9 @@ const PulleyProject = () => {
         </div>
 
         {/* Documents Section */}
-        <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 mb-12">
-          <h2 className="text-2xl font-bold mb-6 text-gray-900">Project Documents</h2>
-          <p className="text-gray-600 mb-6 leading-relaxed">
+        <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100 mb-12">
+          <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Project Documents</h2>
+          <p className="text-gray-600 mb-6 leading-relaxed break-words">
             Download the complete project documentation including presentation and detailed manufacturing report.
           </p>
           <div className="grid md:grid-cols-2 gap-6">

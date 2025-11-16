@@ -20,41 +20,41 @@ const BathroomRackProject = () => {
 
         {/* Header */}
         <div className="mb-10">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-3">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-3 break-words">
             Bathroom Rack Design
           </h1>
-          <p className="text-xl text-gray-600 font-medium">CAD Design Project</p>
+          <p className="text-xl text-gray-600 font-medium break-words">CAD Design Project</p>
         </div>
 
         {/* Overview and Skills */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
-          <div className="md:col-span-2 bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-            <h2 className="text-2xl font-bold mb-6 text-gray-900">Overview</h2>
-            <p className="text-gray-700 leading-relaxed text-lg mb-4">
+          <div className="md:col-span-2 bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100">
+            <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Overview</h2>
+            <p className="text-gray-700 leading-relaxed text-lg mb-4 break-words">
               A functional and elegant bathroom rack design featuring modern aesthetics and practical storage solutions. 
               This design focuses on maximizing space efficiency while maintaining a clean, contemporary look.
             </p>
-            <ul className="list-disc list-inside text-gray-700 space-y-2 leading-relaxed text-lg">
-              <li>Optimized for standard bathroom dimensions</li>
-              <li>Modular design for easy installation</li>
-              <li>Durable materials suitable for humid environments</li>
-              <li>Ergonomic considerations for user accessibility</li>
+            <ul className="list-disc list-inside text-gray-700 space-y-2 leading-relaxed text-lg pl-2 pb-2">
+              <li className="break-words">Optimized for standard bathroom dimensions</li>
+              <li className="break-words">Modular design for easy installation</li>
+              <li className="break-words">Durable materials suitable for humid environments</li>
+              <li className="break-words">Ergonomic considerations for user accessibility</li>
             </ul>
           </div>
-          <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-            <h2 className="text-2xl font-bold mb-6 text-gray-900">Skills & Tools</h2>
-            <div className="flex flex-wrap gap-3">
+          <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100">
+            <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Skills & Tools</h2>
+            <div className="flex flex-wrap gap-3 pb-2">
               {['CAD Design', '3D Modeling', 'Product Design', 'SolidWorks', 'Fusion 360', 'STL Export'].map((t) => (
-                <span key={t} className="bg-primary/10 text-primary font-semibold border border-primary/20 text-sm px-4 py-2 rounded-full">{t}</span>
+                <span key={t} className="bg-primary/10 text-primary font-semibold border border-primary/20 text-sm px-4 py-2 rounded-full break-words">{t}</span>
               ))}
             </div>
           </div>
         </div>
 
         {/* 3D Model Viewer with Implode Animation */}
-        <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 mb-12">
-          <h2 className="text-2xl font-bold mb-6 text-gray-900">3D Model</h2>
-          <p className="text-gray-600 mb-6 leading-relaxed">
+        <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100 mb-12">
+          <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">3D Model</h2>
+          <p className="text-gray-600 mb-6 leading-relaxed break-words">
             Watch the parts implode together to form the complete assembly. Rotate, zoom, and explore the detailed design.
           </p>
           <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
@@ -98,8 +98,8 @@ const BathroomRackProject = () => {
               </Canvas>
             </div>
           </div>
-          <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-            <p className="text-sm text-blue-800">
+          <div className="mt-6 p-4 pb-4 bg-blue-50 border border-blue-200 rounded-lg">
+            <p className="text-sm text-blue-800 break-words pb-2">
               <strong>Note:</strong> To use separate parts animation, export each component of the bathroom rack as a separate STL file 
               (e.g., <code className="bg-blue-100 px-1 rounded">BathroomRack-Part1.stl</code>, <code className="bg-blue-100 px-1 rounded">BathroomRack-Part2.stl</code>, etc.) 
               and update the <code className="bg-blue-100 px-1 rounded">parts</code> array in <code className="bg-blue-100 px-1 rounded">BathroomRackProject.jsx</code>. 
@@ -109,9 +109,9 @@ const BathroomRackProject = () => {
         </div>
 
         {/* Documents Section */}
-        <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 mb-12">
-          <h2 className="text-2xl font-bold mb-6 text-gray-900">Project Documents</h2>
-          <p className="text-gray-600 mb-6 leading-relaxed">
+        <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100 mb-12">
+          <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Project Documents</h2>
+          <p className="text-gray-600 mb-6 leading-relaxed break-words">
             Download the complete project documentation including design presentation and detailed report.
           </p>
           <div className="grid md:grid-cols-2 gap-6">
@@ -174,25 +174,25 @@ const BathroomRackProject = () => {
         </div>
 
         {/* Design Details */}
-        <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100">
-          <h2 className="text-2xl font-bold mb-6 text-gray-900">Design Details</h2>
-          <div className="grid md:grid-cols-2 gap-6">
+        <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100 mb-12">
+          <h2 className="text-2xl font-bold mb-6 text-gray-900 break-words">Design Details</h2>
+          <div className="grid md:grid-cols-2 gap-6 pb-2">
             <div>
-              <h3 className="text-lg font-semibold mb-3 text-gray-900">Key Features</h3>
-              <ul className="list-disc list-inside text-gray-700 space-y-2">
-                <li>Space-efficient vertical design</li>
-                <li>Multiple storage compartments</li>
-                <li>Easy-to-clean surfaces</li>
-                <li>Wall-mounted installation</li>
+              <h3 className="text-lg font-semibold mb-3 text-gray-900 break-words">Key Features</h3>
+              <ul className="list-disc list-inside text-gray-700 space-y-2 leading-relaxed pl-2">
+                <li className="break-words">Space-efficient vertical design</li>
+                <li className="break-words">Multiple storage compartments</li>
+                <li className="break-words">Easy-to-clean surfaces</li>
+                <li className="break-words">Wall-mounted installation</li>
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-3 text-gray-900">Technical Specifications</h3>
-              <ul className="list-disc list-inside text-gray-700 space-y-2">
-                <li>Material: Stainless steel / ABS plastic</li>
-                <li>Mounting: Wall-mounted with standard hardware</li>
-                <li>Weight capacity: Designed for standard bathroom items</li>
-                <li>Dimensions: Optimized for standard bathroom spaces</li>
+              <h3 className="text-lg font-semibold mb-3 text-gray-900 break-words">Technical Specifications</h3>
+              <ul className="list-disc list-inside text-gray-700 space-y-2 leading-relaxed pl-2">
+                <li className="break-words">Material: Stainless steel / ABS plastic</li>
+                <li className="break-words">Mounting: Wall-mounted with standard hardware</li>
+                <li className="break-words">Weight capacity: Designed for standard bathroom items</li>
+                <li className="break-words">Dimensions: Optimized for standard bathroom spaces</li>
               </ul>
             </div>
           </div>
