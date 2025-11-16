@@ -13,7 +13,7 @@ const MEPortfolio = ({ setCurrentPage }) => {
           </h1>
           <div className="flex flex-wrap gap-3 justify-center md:justify-start">
             <a
-              href="/Justis-Findley-Resume.pdf"
+              href="/JustisFindley_Resume-2025.pdf"
               target="_blank"
               rel="noreferrer"
               className="group bg-white hover:bg-gray-50 text-gray-900 border-2 border-gray-300 hover:border-primary px-6 py-3 rounded-xl transition-all duration-300 hover:shadow-lg font-semibold flex items-center gap-2"

@@ -42,7 +42,7 @@ Portfolio/
 │  └── index.js
 ├── public/
 │  ├── index.html
-│  ├── Justis-Findley-Resume.pdf    # Place your resume here for Resume page
+│  ├── JustisFindley_Resume-2025.pdf    # Resume PDF file for Resume page
 │  └── *.stl                        # Place STL model files here
 ├── tailwind.config.js
 ├── netlify.toml                     # Netlify build + SPA redirects
