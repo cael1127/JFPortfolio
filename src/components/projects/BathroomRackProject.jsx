@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import AnimatedSTLModel from '../AnimatedSTLModel';
+import STLModel from '../STLModel';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Stage } from '@react-three/drei';
 
@@ -51,11 +51,11 @@ const BathroomRackProject = () => {
           </div>
         </div>
 
-        {/* 3D Model Viewer with Implode Animation */}
+        {/* 3D Model Viewer */}
         <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100 mb-12">
           <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">3D Model</h2>
           <p className="text-gray-600 mb-6 leading-relaxed break-words">
-            Watch the parts implode together to form the complete assembly. Rotate, zoom, and explore the detailed design.
+            Interactive 3D model of the bathroom rack design. Rotate, zoom, and explore the detailed design.
           </p>
           <div className="bg-gray-50 rounded-xl p-4 border border-gray-200">
             <div className="w-full h-[600px] bg-gray-800 rounded-xl overflow-hidden">
@@ -64,47 +64,16 @@ const BathroomRackProject = () => {
                 <directionalLight position={[5, 5, 5]} intensity={0.8} castShadow />
                 <Suspense fallback={null}>
                   <Stage preset="rembrandt" intensity={1} environment="city">
-                    <AnimatedSTLModel 
-                      parts={null}
-                      // To use separate parts, uncomment and update the parts array below:
-                      // parts={[
-                      //   {
-                      //     path: '/BathroomRack-Part1.stl',
-                      //     color: '#006f9f',
-                      //     finalPosition: [0, 0, 0],
-                      //     initialOffset: [1.5, 0, 0], // [x, y, z] offset from final position
-                      //     animationDelay: 0
-                      //   },
-                      //   {
-                      //     path: '/BathroomRack-Part2.stl',
-                      //     color: '#2ca8bb',
-                      //     finalPosition: [0, 0, 0],
-                      //     initialOffset: [-1.5, 0, 0],
-                      //     animationDelay: 0.1
-                      //   },
-                      //   // Add more parts as needed...
-                      // ]}
-                      // Fallback: single model mode (current behavior)
+                    <STLModel 
                       modelPath="/BathRoom Rack v6.stl"
                       color="#006f9f"
                       scale={1}
-                      animationDuration={2.0}
-                      separationDistance={1.2}
-                      numParts={8}
                     />
                   </Stage>
                 </Suspense>
                 <OrbitControls enableDamping makeDefault />
               </Canvas>
             </div>
-          </div>
-          <div className="mt-6 p-4 pb-4 bg-blue-50 border border-blue-200 rounded-lg">
-            <p className="text-sm text-blue-800 break-words pb-2">
-              <strong>Note:</strong> To use separate parts animation, export each component of the bathroom rack as a separate STL file 
-              (e.g., <code className="bg-blue-100 px-1 rounded">BathroomRack-Part1.stl</code>, <code className="bg-blue-100 px-1 rounded">BathroomRack-Part2.stl</code>, etc.) 
-              and update the <code className="bg-blue-100 px-1 rounded">parts</code> array in <code className="bg-blue-100 px-1 rounded">BathroomRackProject.jsx</code>. 
-              Each part will animate independently from its separated position to the final assembly position.
-            </p>
           </div>
         </div>
 

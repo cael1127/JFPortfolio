@@ -4,6 +4,18 @@ const TorquePlateProject = () => {
   return (
     <div className="min-h-screen text-gray-900" style={{background: 'transparent'}}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+        {/* Back Button */}
+        <button
+          onClick={() => window.location.hash = '#/portfolio'}
+          className="mb-6 group inline-flex items-center gap-2 text-primary hover:text-secondary font-semibold transition-colors"
+        >
+          <svg className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Portfolio
+        </button>
+
+        {/* Header */}
         <div className="mb-10">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent mb-3 pb-2 break-words leading-[1.4]">
             Torque Plate Project
@@ -13,17 +25,52 @@ const TorquePlateProject = () => {
         <div className="grid md:grid-cols-3 gap-6 mb-12">
           <div className="md:col-span-2 bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100">
             <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">Overview</h2>
+            <p className="text-gray-700 leading-relaxed text-lg mb-4 break-words">
+              Team manufacturing project to create a torque plate from start to finish. This project involved 
+              planning the manufacturing process, performing machining operations, taking precise measurements, 
+              and documenting everything in a detailed report. Working as a team was essential for success.
+            </p>
             <ul className="list-disc list-inside text-gray-700 space-y-3 leading-relaxed text-lg pl-2 pb-2">
-              <li className="break-words">Collaborated to manufacture a torque plate end‑to‑end.</li>
-              <li className="break-words">Produced a process report with measurements and lessons.</li>
+              <li className="break-words">Collaborated with team members to plan and execute manufacturing process.</li>
+              <li className="break-words">Performed machining operations including drilling, tapping, and finishing.</li>
+              <li className="break-words">Used precision measurement tools to verify dimensions and tolerances.</li>
+              <li className="break-words">Documented complete process with photos, measurements, and notes.</li>
+              <li className="break-words">Wrote detailed report covering procedures, challenges, and lessons learned.</li>
             </ul>
           </div>
           <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100">
-            <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">Skills</h2>
+            <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">Skills & Tools</h2>
             <div className="flex flex-wrap gap-3 pb-2">
-              {['Manufacturing','Metrology','Teamwork','Documentation'].map((t) => (
+              {['Manufacturing','Metrology','Teamwork','Documentation','Machining'].map((t) => (
                 <span key={t} className="bg-primary/10 text-primary font-semibold border border-primary/20 text-sm px-4 py-2 rounded-full break-words">{t}</span>
               ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Project Details */}
+        <div className="bg-white p-8 pb-8 rounded-2xl shadow-lg border border-gray-100 mb-12">
+          <h2 className="text-2xl font-bold mb-6 pb-1 text-gray-900 break-words leading-[1.3]">Project Details</h2>
+          <div className="grid md:grid-cols-2 gap-6 pb-2">
+            <div>
+              <h3 className="text-lg font-semibold mb-3 text-gray-900 break-words">Manufacturing Process</h3>
+              <ul className="list-disc list-inside text-gray-700 space-y-2 leading-relaxed pl-2">
+                <li className="break-words">Planned machining sequence and tool selection</li>
+                <li className="break-words">Set up workpieces and secured them properly</li>
+                <li className="break-words">Performed drilling and tapping operations</li>
+                <li className="break-words">Used calipers and micrometers for measurements</li>
+                <li className="break-words">Applied quality control checks throughout process</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-lg font-semibold mb-3 text-gray-900 break-words">Team Collaboration</h3>
+              <ul className="list-disc list-inside text-gray-700 space-y-2 leading-relaxed pl-2">
+                <li className="break-words">Divided tasks based on team member strengths</li>
+                <li className="break-words">Communicated progress and issues regularly</li>
+                <li className="break-words">Helped each other with difficult operations</li>
+                <li className="break-words">Reviewed work together for quality assurance</li>
+                <li className="break-words">Documented process collaboratively in final report</li>
+              </ul>
             </div>
           </div>
         </div>
